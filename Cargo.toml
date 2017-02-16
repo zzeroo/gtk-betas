@@ -1,0 +1,28 @@
+[package]
+name = "gtk-betas"
+version = "0.1.0"
+authors = ["Stefan Müller <s.mueller@it.kls-glt.de>"]
+description = "Tests für die Grafische Oberfläche der 'xMZ-Mod-Touch'-Platform"
+documentation = "https://gaswarnanlagen.com/xmz-mod-touch"
+homepage = "https://gaswarnanlagen.com/xmz-mod-touch"
+repository = "https://github.com/zzeroo/xMZ-Mod-Touch-GUI.git"
+license = "GPL-2.0"
+
+[[bin]]
+name = "gtk-betas"
+path = "src/main.rs"
+doc = false
+
+[dependencies]
+error-chain = "^0"
+gdk = "^0"
+glib = "^0"
+gobject-sys = "^0"
+gtk = "^0"
+gtk-sys = "^0"
+hyper = "^0"
+libc = "^0"
+rand = "^0"
+serde = "^0"
+serde_json = "^0"
+xmz_server = { git = "https://github.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server.git" }
