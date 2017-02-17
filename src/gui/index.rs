@@ -6,9 +6,7 @@ use gobject_sys;
 use gtk_sys;
 use gtk;
 use gtk::prelude::*;
-use macros;
 use xmz_server::*;
-
 use glib::translate::ToGlibPtr;
 
 
@@ -30,7 +28,15 @@ pub fn launch() {
     let builder = gtk::Builder::new();
     builder.add_from_string(&glade_str);
 
-    let window_main: gtk::Window = builder.get_object("window_main").expect("Could not find 'window_main' in glade file");
+    let window_main: gtk::Window = build!(builder, "window_main");
+    let infobar: gtk::InfoBar = build!(builder, "infobar");
+
+
+    window_main.connect_delete_event(|_, _| {
+        gtk::main_quit();
+
+        Inhibit(false)
+    });
 
     #[cfg(feature = "development")]
     window_main.connect_key_press_event(move |_, key| {

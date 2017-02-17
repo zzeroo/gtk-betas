@@ -11,6 +11,5 @@ extern crate xmz_server;
 
 pub mod errors;
 pub mod gui;
-#[macro_export] pub mod macros;
 
 use errors::*;
