@@ -13,6 +13,9 @@ name = "gtk-betas"
 path = "src/main.rs"
 doc = false
 
+[features]
+development = []
+
 [dependencies]
 error-chain = "^0"
 gdk = "^0"
