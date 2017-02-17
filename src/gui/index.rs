@@ -84,7 +84,7 @@ pub fn launch() {
     window_main.show_all();
 
     #[cfg(not(feature = "development"))]
-    window.maximize();
+    window_main.maximize();
 
     gtk::main();
 }
