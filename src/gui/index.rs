@@ -1,14 +1,41 @@
 use errors::*;
 use gdk::enums::key;
 use glib;
+use glib::translate::ToGlibPtr;
 use glib::Value;
 use gobject_sys;
 use gtk_sys;
 use gtk;
 use gtk::prelude::*;
-use xmz_server::*;
-use glib::translate::ToGlibPtr;
 
+
+fn window_main_setup(window: &gtk::Window) -> Result<()> {
+    let window_title = format!("{} {}",
+                env!("CARGO_PKG_DESCRIPTION"),
+                env!("CARGO_PKG_VERSION"));
+
+    window.set_title(&window_title);
+
+    if let Some(display) = window.get_display() {
+        let screen = display.get_screen(0);
+        screen.set_resolution(130.0);
+
+        // CSS Datei einbinden
+        let css_style_provider = gtk::CssProvider::new();
+        let css_gui = include_str!("gui.css");
+        match css_style_provider.load_from_data(css_gui) {
+            Ok(_) => {
+                gtk::StyleContext::add_provider_for_screen(&screen, &css_style_provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+            Err(e) => {println!("Error: css_style_provider.load_from_data() failed: {}", e)}
+        }
+    }
+
+    #[cfg(not(feature = "development"))]
+    window.maximize();
+
+    Ok(())
+}
 
 pub fn launch() {
     if gtk::init().is_err() {
@@ -30,7 +57,18 @@ pub fn launch() {
 
     let window_main: gtk::Window = build!(builder, "window_main");
     let infobar: gtk::InfoBar = build!(builder, "infobar");
+    let label_infobar_msg: gtk::Label = build!(builder, "label_infobar_msg");
 
+    label_infobar_msg.set_text("Anwendung erfolgreich gestartet!");
+
+    // Basic setup des Haupt Fensters
+    window_main_setup(&window_main);
+
+
+    // Close Action der InfoBar
+    infobar.connect_response(clone!(infobar => move |infobar, _| {
+        infobar.hide();
+    }));
 
     window_main.connect_delete_event(|_, _| {
         gtk::main_quit();
