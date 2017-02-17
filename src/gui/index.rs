@@ -30,8 +30,6 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
         }
     }
 
-    #[cfg(not(feature = "development"))]
-    window.maximize();
 
     Ok(())
 }
@@ -84,6 +82,9 @@ pub fn launch() {
     });
 
     window_main.show_all();
+
+    #[cfg(not(feature = "development"))]
+    window.maximize();
 
     gtk::main();
 }
