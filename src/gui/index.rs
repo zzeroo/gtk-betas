@@ -18,6 +18,7 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
 
     if let Some(display) = window.get_display() {
         let screen = display.get_screen(0);
+        screen.set_resolution(130.0);
 
         // CSS Datei einbinden
         let css_style_provider = gtk::CssProvider::new();
@@ -30,6 +31,8 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
         }
     }
 
+    #[cfg(not(feature = "development"))]
+    window.fullscreen();
 
     Ok(())
 }
@@ -83,8 +86,6 @@ pub fn launch() {
 
     window_main.show_all();
 
-    #[cfg(not(feature = "development"))]
-    window_main.maximize();
 
     gtk::main();
 }
