@@ -2,6 +2,36 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkTextBuffer" id="textbuffer_kombisensor_type">
+    <property name="text" translatable="yes">RA-GAS GmbH Kombisensor</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_modbus_slave_id">
+    <property name="text" translatable="yes">24</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor1_average">
+    <property name="text" translatable="yes">18.2</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor1_sensor_type">
+    <property name="text" translatable="yes">NO2</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor1_si">
+    <property name="text" translatable="yes">ppm</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor1_value">
+    <property name="text" translatable="yes">30.0</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor2_average">
+    <property name="text" translatable="yes">205.1</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor2_sensor_type">
+    <property name="text" translatable="yes">CO</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor2_si">
+    <property name="text" translatable="yes">ppm</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer_sensor2_value">
+    <property name="text" translatable="yes">280.0</property>
+  </object>
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
     <child>
@@ -114,10 +144,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -129,10 +351,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id1">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type1">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -144,10 +558,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type2">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -159,10 +765,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type3">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -174,10 +972,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type4">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -189,10 +1179,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type5">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -204,10 +1386,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type6">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -219,10 +1593,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type7">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -234,85 +1800,202 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <property name="width_request">100</property>
-                            <property name="height_request">80</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">label</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_modbus_slave_id8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_modbus_slave_id</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_kombisensor_type8">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="buffer">textbuffer_kombisensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_sensor_type9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_average9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_value9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor1_si9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor1_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_sensor_type9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="left_margin">10</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_sensor_type</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_average9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_average</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_value9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_value</property>
+                                        <property name="monospace">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTextView" id="textview_sensor2_si9">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="editable">False</property>
+                                        <property name="justification">right</property>
+                                        <property name="left_margin">5</property>
+                                        <property name="right_margin">5</property>
+                                        <property name="buffer">textbuffer_sensor2_si</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
