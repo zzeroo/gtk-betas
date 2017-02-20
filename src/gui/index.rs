@@ -54,7 +54,7 @@ impl KombisensorList {
             textview_sensor1_si.get_buffer().unwrap().set_text(&sensor1.get_si());
         }
 
-        if let Some(sensor2) = kombisensor.get_sensor(0) {
+        if let Some(sensor2) = kombisensor.get_sensor(1) {
             textview_sensor2_sensor_type.get_buffer().unwrap().set_text(&sensor2.get_sensor_type());
             textview_sensor2_average.get_buffer().unwrap().set_text("n/a");
             textview_sensor2_value.get_buffer().unwrap().set_text(&sensor2.get_concentration().to_string());
