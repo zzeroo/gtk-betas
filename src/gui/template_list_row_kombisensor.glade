@@ -63,7 +63,7 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
     <property name="height_request">80</property>
     <property name="visible">True</property>
     <property name="can_focus">True</property>
-    <property name="margin_bottom">5</property>
+    <property name="margin_bottom">30</property>
     <property name="activatable">False</property>
     <property name="selectable">False</property>
     <child>
