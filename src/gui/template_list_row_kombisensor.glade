@@ -132,9 +132,6 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
                 <property name="cursor_visible">False</property>
                 <property name="buffer">textbuffer_sensor1_sensor_type</property>
                 <property name="accepts_tab">False</property>
-                <style>
-                  <class name="bold"/>
-                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -219,9 +216,6 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
                 <property name="cursor_visible">False</property>
                 <property name="buffer">textbuffer_sensor2_sensor_type</property>
                 <property name="accepts_tab">False</property>
-                <style>
-                  <class name="bold"/>
-                </style>
               </object>
               <packing>
                 <property name="expand">True</property>

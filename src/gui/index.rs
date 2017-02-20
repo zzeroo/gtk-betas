@@ -8,6 +8,7 @@ use gtk_sys;
 use gtk;
 use gtk::prelude::*;
 use std::collections::HashSet;
+use xmz_server::Kombisensor;
 
 
 struct KombisensorList {
@@ -25,18 +26,7 @@ impl KombisensorList {
         }
     }
 
-    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder) {
-        let modbus_slave_id = "100";
-        let kombisensor_type = "CO/ NO2 Kombisensor";
-        let sensor1_sensor_type = "NO2";
-        let sensor1_average = "30.0";
-        let sensor1_value = "20.1";
-        let sensor1_si = "ppm";
-        let sensor2_sensor_type = "CO";
-        let sensor2_average = "280.0";
-        let sensor2_value = "180.3";
-        let sensor2_si = "ppm";
-
+    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder, kombisensor: &Kombisensor) {
         let template_list_row_kombisensor_glade = include_str!("template_list_row_kombisensor.glade");
         builder.add_from_string(&template_list_row_kombisensor_glade);
 
@@ -54,16 +44,22 @@ impl KombisensorList {
         let textview_sensor2_value: gtk::TextView = build!(builder, "textview_sensor2_value");
         let textview_sensor2_si: gtk::TextView = build!(builder, "textview_sensor2_si");
 
-        textview_modbus_slave_id.get_buffer().unwrap().set_text(&modbus_slave_id);
-        textview_kombisensor_type.get_buffer().unwrap().set_text(&kombisensor_type);
-        textview_sensor1_sensor_type.get_buffer().unwrap().set_text(&sensor1_sensor_type);
-        textview_sensor1_average.get_buffer().unwrap().set_text(&sensor1_average);
-        textview_sensor1_value.get_buffer().unwrap().set_text(&sensor1_value);
-        textview_sensor1_si.get_buffer().unwrap().set_text(&sensor1_si);
-        textview_sensor2_sensor_type.get_buffer().unwrap().set_text(&sensor2_sensor_type);
-        textview_sensor2_average.get_buffer().unwrap().set_text(&sensor2_average);
-        textview_sensor2_value.get_buffer().unwrap().set_text(&sensor2_value);
-        textview_sensor2_si.get_buffer().unwrap().set_text(&sensor2_si);
+        textview_modbus_slave_id.get_buffer().unwrap().set_text(&kombisensor.get_modbus_slave_id().to_string());
+        textview_kombisensor_type.get_buffer().unwrap().set_text(&kombisensor.get_kombisensor_type());
+
+        if let Some(sensor1) = kombisensor.get_sensor(0) {
+            textview_sensor1_sensor_type.get_buffer().unwrap().set_text(&sensor1.get_sensor_type());
+            textview_sensor1_average.get_buffer().unwrap().set_text("n/a");
+            textview_sensor1_value.get_buffer().unwrap().set_text(&sensor1.get_concentration().to_string());
+            textview_sensor1_si.get_buffer().unwrap().set_text(&sensor1.get_si());
+        }
+
+        if let Some(sensor2) = kombisensor.get_sensor(0) {
+            textview_sensor2_sensor_type.get_buffer().unwrap().set_text(&sensor2.get_sensor_type());
+            textview_sensor2_average.get_buffer().unwrap().set_text("n/a");
+            textview_sensor2_value.get_buffer().unwrap().set_text(&sensor2.get_concentration().to_string());
+            textview_sensor2_si.get_buffer().unwrap().set_text(&sensor2.get_si());
+        }
 
         self.list_box.insert(&template_list_row_kombisensor, -1);
     }
@@ -79,7 +75,7 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
 
     if let Some(display) = window.get_display() {
         let screen = display.get_screen(0);
-        screen.set_resolution(130.0);
+        screen.set_resolution(150.0);
 
         // CSS Datei einbinden
         let css_style_provider = gtk::CssProvider::new();
@@ -129,8 +125,10 @@ pub fn launch() {
     window_main_setup(&window_main);
 
     let mut kombisensor_list = KombisensorList::new(&builder);
-    for i in 0..201 {
-        kombisensor_list.kombisensor_to_row(&builder);
+    for id in 0..11 {
+        let mut kombisensor = Kombisensor::new();
+        kombisensor.set_modbus_slave_id(id);
+        kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
     }
 
     // Close Action der InfoBar
