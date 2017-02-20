@@ -28,36 +28,6 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
   <!-- interface-description Beta window tests for gtk guis  -->
   <!-- interface-copyright Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
   <!-- interface-authors Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
-  <object class="GtkTextBuffer" id="textbuffer_kombisensor_type">
-    <property name="text" translatable="yes">RA-GAS GmbH Kombisensor</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_modbus_slave_id">
-    <property name="text" translatable="yes">24</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_average">
-    <property name="text" translatable="yes">18.2</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_sensor_type">
-    <property name="text" translatable="yes">NO2</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_si">
-    <property name="text" translatable="yes">ppm</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_value">
-    <property name="text" translatable="yes">30.0</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_average">
-    <property name="text" translatable="yes">205.1</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_sensor_type">
-    <property name="text" translatable="yes">CO</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_si">
-    <property name="text" translatable="yes">ppm</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_value">
-    <property name="text" translatable="yes">280.0</property>
-  </object>
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
     <property name="border_width">10</property>

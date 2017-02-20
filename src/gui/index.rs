@@ -7,6 +7,24 @@ use gobject_sys;
 use gtk_sys;
 use gtk;
 use gtk::prelude::*;
+use std::collections::HashSet;
+
+
+struct KombisensorList {
+    list_box: gtk::ListBox,
+    rows: HashSet<gtk::ListBoxRow>,
+}
+
+impl KombisensorList {
+    pub fn new(builder: &gtk::Builder) -> Self {
+        let list_box: gtk::ListBox = build!(builder, "list_box_sensors");
+
+        KombisensorList {
+            list_box: list_box,
+            rows: HashSet::new(),
+        }
+    }
+}
 
 
 fn window_main_setup(window: &gtk::Window) -> Result<()> {
