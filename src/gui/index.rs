@@ -24,6 +24,49 @@ impl KombisensorList {
             rows: HashSet::new(),
         }
     }
+
+    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder) {
+        let modbus_slave_id = "100";
+        let kombisensor_type = "CO/ NO2 Kombisensor";
+        let sensor1_sensor_type = "NO2";
+        let sensor1_average = "30.0";
+        let sensor1_value = "20.1";
+        let sensor1_si = "ppm";
+        let sensor2_sensor_type = "CO";
+        let sensor2_average = "280.0";
+        let sensor2_value = "180.3";
+        let sensor2_si = "ppm";
+
+        let template_list_row_kombisensor_glade = include_str!("template_list_row_kombisensor.glade");
+        builder.add_from_string(&template_list_row_kombisensor_glade);
+
+        let template_list_row_kombisensor: gtk::ListBoxRow = build!(builder, "template_list_row_kombisensor");
+
+
+        let textview_modbus_slave_id: gtk::TextView = build!(builder, "textview_modbus_slave_id");
+        let textview_kombisensor_type: gtk::TextView = build!(builder, "textview_kombisensor_type");
+        let textview_sensor1_sensor_type: gtk::TextView = build!(builder, "textview_sensor1_sensor_type");
+        let textview_sensor1_average: gtk::TextView = build!(builder, "textview_sensor1_average");
+        let textview_sensor1_value: gtk::TextView = build!(builder, "textview_sensor1_value");
+        let textview_sensor1_si: gtk::TextView = build!(builder, "textview_sensor1_si");
+        let textview_sensor2_sensor_type: gtk::TextView = build!(builder, "textview_sensor2_sensor_type");
+        let textview_sensor2_average: gtk::TextView = build!(builder, "textview_sensor2_average");
+        let textview_sensor2_value: gtk::TextView = build!(builder, "textview_sensor2_value");
+        let textview_sensor2_si: gtk::TextView = build!(builder, "textview_sensor2_si");
+
+        textview_modbus_slave_id.get_buffer().unwrap().set_text(&modbus_slave_id);
+        textview_kombisensor_type.get_buffer().unwrap().set_text(&kombisensor_type);
+        textview_sensor1_sensor_type.get_buffer().unwrap().set_text(&sensor1_sensor_type);
+        textview_sensor1_average.get_buffer().unwrap().set_text(&sensor1_average);
+        textview_sensor1_value.get_buffer().unwrap().set_text(&sensor1_value);
+        textview_sensor1_si.get_buffer().unwrap().set_text(&sensor1_si);
+        textview_sensor2_sensor_type.get_buffer().unwrap().set_text(&sensor2_sensor_type);
+        textview_sensor2_average.get_buffer().unwrap().set_text(&sensor2_average);
+        textview_sensor2_value.get_buffer().unwrap().set_text(&sensor2_value);
+        textview_sensor2_si.get_buffer().unwrap().set_text(&sensor2_si);
+
+        self.list_box.insert(&template_list_row_kombisensor, -1);
+    }
 }
 
 
@@ -55,48 +98,7 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
     Ok(())
 }
 
-fn create_kombisensor_list(builder: &gtk::Builder) {
-    let modbus_slave_id = "100";
-    let kombisensor_type = "CO/ NO2 Kombisensor";
-    let sensor1_sensor_type = "NO2";
-    let sensor1_average = "30.0";
-    let sensor1_value = "20.1";
-    let sensor1_si = "ppm";
-    let sensor2_sensor_type = "CO";
-    let sensor2_average = "280.0";
-    let sensor2_value = "180.3";
-    let sensor2_si = "ppm";
 
-    let template_list_row_kombisensor_glade = include_str!("template_list_row_kombisensor.glade");
-    builder.add_from_string(&template_list_row_kombisensor_glade);
-
-    let list_box_sensors: gtk::ListBox = build!(builder, "list_box_sensors");
-    let template_list_row_kombisensor: gtk::ListBoxRow = build!(builder, "template_list_row_kombisensor");
-
-    let textview_modbus_slave_id: gtk::TextView = build!(builder, "textview_modbus_slave_id");
-    let textview_kombisensor_type: gtk::TextView = build!(builder, "textview_kombisensor_type");
-    let textview_sensor1_sensor_type: gtk::TextView = build!(builder, "textview_sensor1_sensor_type");
-    let textview_sensor1_average: gtk::TextView = build!(builder, "textview_sensor1_average");
-    let textview_sensor1_value: gtk::TextView = build!(builder, "textview_sensor1_value");
-    let textview_sensor1_si: gtk::TextView = build!(builder, "textview_sensor1_si");
-    let textview_sensor2_sensor_type: gtk::TextView = build!(builder, "textview_sensor2_sensor_type");
-    let textview_sensor2_average: gtk::TextView = build!(builder, "textview_sensor2_average");
-    let textview_sensor2_value: gtk::TextView = build!(builder, "textview_sensor2_value");
-    let textview_sensor2_si: gtk::TextView = build!(builder, "textview_sensor2_si");
-
-    textview_modbus_slave_id.get_buffer().unwrap().set_text(&modbus_slave_id);
-    textview_kombisensor_type.get_buffer().unwrap().set_text(&kombisensor_type);
-    textview_sensor1_sensor_type.get_buffer().unwrap().set_text(&sensor1_sensor_type);
-    textview_sensor1_average.get_buffer().unwrap().set_text(&sensor1_average);
-    textview_sensor1_value.get_buffer().unwrap().set_text(&sensor1_value);
-    textview_sensor1_si.get_buffer().unwrap().set_text(&sensor1_si);
-    textview_sensor2_sensor_type.get_buffer().unwrap().set_text(&sensor2_sensor_type);
-    textview_sensor2_average.get_buffer().unwrap().set_text(&sensor2_average);
-    textview_sensor2_value.get_buffer().unwrap().set_text(&sensor2_value);
-    textview_sensor2_si.get_buffer().unwrap().set_text(&sensor2_si);
-
-    list_box_sensors.insert(&template_list_row_kombisensor, -1);
-}
 
 pub fn launch() {
     if gtk::init().is_err() {
@@ -126,8 +128,9 @@ pub fn launch() {
     // Basic setup des Haupt Fensters
     window_main_setup(&window_main);
 
-    for i in 0..11 {
-        create_kombisensor_list(&builder);
+    let mut kombisensor_list = KombisensorList::new(&builder);
+    for i in 0..201 {
+        kombisensor_list.kombisensor_to_row(&builder);
     }
 
     // Close Action der InfoBar
