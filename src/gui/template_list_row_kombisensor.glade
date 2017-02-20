@@ -28,36 +28,6 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
   <!-- interface-description Beta window tests for gtk guis -->
   <!-- interface-copyright Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
   <!-- interface-authors Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
-  <object class="GtkTextBuffer" id="textbuffer_kombisensor_type">
-    <property name="text" translatable="yes">Kombisensor CO/ NO2</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_modbus_slave_id">
-    <property name="text" translatable="yes">247</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_average">
-    <property name="text" translatable="yes">20.1</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_sensor_type">
-    <property name="text" translatable="yes">NO2</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_si">
-    <property name="text" translatable="yes">ppm</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor1_value">
-    <property name="text" translatable="yes">30.0</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_average">
-    <property name="text" translatable="yes">180.9</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_sensor_type">
-    <property name="text" translatable="yes">CO</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_si">
-    <property name="text" translatable="yes">ppm</property>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer_sensor2_value">
-    <property name="text" translatable="yes">280.0</property>
-  </object>
   <object class="GtkListBoxRow" id="template_list_row_kombisensor">
     <property name="width_request">100</property>
     <property name="height_request">80</property>
@@ -76,36 +46,37 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkTextView" id="textview_modbus_slave_id">
+              <object class="GtkLabel" id="label_modbus_slave_id">
                 <property name="width_request">100</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_modbus_slave_id</property>
-                <property name="accepts_tab">False</property>
-                <property name="input_purpose">alpha</property>
-                <property name="monospace">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="label" translatable="yes">247</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="monospace"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
-                <property name="fill">True</property>
+                <property name="fill">False</property>
                 <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_kombisensor_type">
+              <object class="GtkLabel" id="label_kombisensor_type">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_kombisensor_type</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">RA-GAS GmbH CO/ NO2 Kombisensor Modbus</property>
                 <style>
                   <class name="bold"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">True</property>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
               </packing>
@@ -122,15 +93,13 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkTextView" id="textview_sensor1_sensor_type">
+              <object class="GtkLabel" id="label_sensor1_sensor_type">
                 <property name="width_request">100</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">100</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor1_sensor_type</property>
-                <property name="accepts_tab">False</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">NO2 Messzelle</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">1</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -140,30 +109,33 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             </child>
             <child>
               <object class="GtkLabel">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Mittelwert</property>
+                <property name="xalign">1</property>
                 <style>
                   <class name="small"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_sensor1_average">
-                <property name="width_request">100</property>
+              <object class="GtkLabel" id="label_sensor1_average">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">5</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor1_average</property>
-                <property name="accepts_tab">False</property>
-                <property name="monospace">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="label" translatable="yes">20.1</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="monospace"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -173,30 +145,34 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             </child>
             <child>
               <object class="GtkLabel">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Direktwert</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">1</property>
                 <style>
                   <class name="small"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_sensor1_value">
-                <property name="width_request">100</property>
+              <object class="GtkLabel" id="label_sensor1_value">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">5</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor1_value</property>
-                <property name="accepts_tab">False</property>
-                <property name="monospace">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="label" translatable="yes">30.0</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="monospace"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -205,14 +181,13 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_sensor1_si">
+              <object class="GtkLabel" id="label_sensor1_si">
+                <property name="width_request">100</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="editable">False</property>
-                <property name="justification">right</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor1_si</property>
-                <property name="accepts_tab">False</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">ppm</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">1</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -232,15 +207,13 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkTextView" id="textview_sensor2_sensor_type">
+              <object class="GtkLabel" id="label_sensor2_sensor_type">
                 <property name="width_request">100</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">100</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor2_sensor_type</property>
-                <property name="accepts_tab">False</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">CO Messzelle</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">1</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -250,31 +223,33 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             </child>
             <child>
               <object class="GtkLabel">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Mittelwert</property>
-                <property name="justify">right</property>
+                <property name="xalign">1</property>
                 <style>
                   <class name="small"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_sensor2_average">
-                <property name="width_request">100</property>
+              <object class="GtkLabel" id="label_sensor2_average">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">5</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor2_average</property>
-                <property name="accepts_tab">False</property>
-                <property name="monospace">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="label" translatable="yes">180.9</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="monospace"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -284,30 +259,35 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
             </child>
             <child>
               <object class="GtkLabel">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Direktwert</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">1</property>
                 <style>
                   <class name="small"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_sensor2_value">
-                <property name="width_request">100</property>
+              <object class="GtkLabel" id="label_sensor2_value">
+                <property name="width_request">50</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="margin_left">5</property>
-                <property name="editable">False</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor2_value</property>
-                <property name="accepts_tab">False</property>
-                <property name="monospace">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="xpad">0</property>
+                <property name="label" translatable="yes">280.0</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="monospace"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -316,14 +296,13 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="textview_sensor2_si">
+              <object class="GtkLabel" id="label_sensor2_si">
+                <property name="width_request">100</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="editable">False</property>
-                <property name="justification">right</property>
-                <property name="cursor_visible">False</property>
-                <property name="buffer">textbuffer_sensor2_si</property>
-                <property name="accepts_tab">False</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">ppm</property>
+                <property name="use_markup">True</property>
+                <property name="xalign">1</property>
               </object>
               <packing>
                 <property name="expand">True</property>

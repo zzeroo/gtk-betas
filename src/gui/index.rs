@@ -33,32 +33,32 @@ impl KombisensorList {
         let template_list_row_kombisensor: gtk::ListBoxRow = build!(builder, "template_list_row_kombisensor");
 
 
-        let textview_modbus_slave_id: gtk::TextView = build!(builder, "textview_modbus_slave_id");
-        let textview_kombisensor_type: gtk::TextView = build!(builder, "textview_kombisensor_type");
-        let textview_sensor1_sensor_type: gtk::TextView = build!(builder, "textview_sensor1_sensor_type");
-        let textview_sensor1_average: gtk::TextView = build!(builder, "textview_sensor1_average");
-        let textview_sensor1_value: gtk::TextView = build!(builder, "textview_sensor1_value");
-        let textview_sensor1_si: gtk::TextView = build!(builder, "textview_sensor1_si");
-        let textview_sensor2_sensor_type: gtk::TextView = build!(builder, "textview_sensor2_sensor_type");
-        let textview_sensor2_average: gtk::TextView = build!(builder, "textview_sensor2_average");
-        let textview_sensor2_value: gtk::TextView = build!(builder, "textview_sensor2_value");
-        let textview_sensor2_si: gtk::TextView = build!(builder, "textview_sensor2_si");
+        let label_modbus_slave_id: gtk::Label = build!(builder, "label_modbus_slave_id");
+        let label_kombisensor_type: gtk::Label = build!(builder, "label_kombisensor_type");
+        let label_sensor1_sensor_type: gtk::Label = build!(builder, "label_sensor1_sensor_type");
+        let label_sensor1_average: gtk::Label = build!(builder, "label_sensor1_average");
+        let label_sensor1_value: gtk::Label = build!(builder, "label_sensor1_value");
+        let label_sensor1_si: gtk::Label = build!(builder, "label_sensor1_si");
+        let label_sensor2_sensor_type: gtk::Label = build!(builder, "label_sensor2_sensor_type");
+        let label_sensor2_average: gtk::Label = build!(builder, "label_sensor2_average");
+        let label_sensor2_value: gtk::Label = build!(builder, "label_sensor2_value");
+        let label_sensor2_si: gtk::Label = build!(builder, "label_sensor2_si");
 
-        textview_modbus_slave_id.get_buffer().unwrap().set_text(&kombisensor.get_modbus_slave_id().to_string());
-        textview_kombisensor_type.get_buffer().unwrap().set_text(&kombisensor.get_kombisensor_type());
+        label_modbus_slave_id.set_text(&kombisensor.get_modbus_slave_id().to_string());
+        label_kombisensor_type.set_text(&kombisensor.get_kombisensor_type());
 
         if let Some(sensor1) = kombisensor.get_sensor(0) {
-            textview_sensor1_sensor_type.get_buffer().unwrap().set_text(&sensor1.get_sensor_type());
-            textview_sensor1_average.get_buffer().unwrap().set_text("n/a");
-            textview_sensor1_value.get_buffer().unwrap().set_text(&sensor1.get_concentration().to_string());
-            textview_sensor1_si.get_buffer().unwrap().set_text(&sensor1.get_si());
+            label_sensor1_sensor_type.set_text(&sensor1.get_sensor_type());
+            label_sensor1_average.set_text("n/a");
+            label_sensor1_value.set_text(&sensor1.get_concentration().to_string());
+            label_sensor1_si.set_text(&sensor1.get_si());
         }
 
         if let Some(sensor2) = kombisensor.get_sensor(1) {
-            textview_sensor2_sensor_type.get_buffer().unwrap().set_text(&sensor2.get_sensor_type());
-            textview_sensor2_average.get_buffer().unwrap().set_text("n/a");
-            textview_sensor2_value.get_buffer().unwrap().set_text(&sensor2.get_concentration().to_string());
-            textview_sensor2_si.get_buffer().unwrap().set_text(&sensor2.get_si());
+            label_sensor2_sensor_type.set_text(&sensor2.get_sensor_type());
+            label_sensor2_average.set_text("n/a");
+            label_sensor2_value.set_text(&sensor2.get_concentration().to_string());
+            label_sensor2_si.set_text(&sensor2.get_si());
         }
 
         self.list_box.insert(&template_list_row_kombisensor, -1);
