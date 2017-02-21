@@ -7,6 +7,7 @@ extern crate glib;
 extern crate gobject_sys;
 extern crate gtk_sys;
 extern crate gtk;
+extern crate rand;
 extern crate xmz_server;
 
 pub mod errors;

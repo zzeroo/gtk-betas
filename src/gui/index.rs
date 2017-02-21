@@ -7,8 +7,11 @@ use gobject_sys;
 use gtk_sys;
 use gtk;
 use gtk::prelude::*;
+use rand::Rng;
 use std::collections::HashSet;
+use std::thread;
 use xmz_server::Kombisensor;
+
 
 
 struct KombisensorList {
@@ -139,26 +142,55 @@ pub fn launch() {
         kombisensors.push(kombisensor);
     }
 
-    for (i, kombisensor) in kombisensors.iter().enumerate() {
-        if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
-            println!("Row found at {}", i);
-        } else {
-            println!("No row found at {}", i);
-            let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
-            kombisensor_list.get_list_box().insert(&row, i as i32);
-        }
-    }
+    use std::sync::{Arc, Mutex};
+    use std::time::Duration;
+    let kombisensors = Arc::new(Mutex::new(kombisensors));
 
-    for (i, kombisensor) in kombisensors.iter().enumerate() {
-        if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
-            println!("Row found at {}", i);
-        } else {
-            println!("No row found at {}", i);
-            let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
-            kombisensor_list.get_list_box().insert(&row, i as i32);
-        }
-    }
+    // GUI Update Task
+    gtk::idle_add(clone!(kombisensors => move || {
+        let lenght = kombisensors.lock().unwrap().len() as i32;
+        for (i, kombisensor) in kombisensors.lock().unwrap().iter().enumerate() {
+            println!("{:#?}", kombisensor);
+            // Remove all Rows for they we dont have a kombisensor. If there are less kombisensors then rows.
+            while let Some(row) = kombisensor_list.get_list_box().get_row_at_index(lenght + 1) {
+                kombisensor_list.get_list_box().remove(&row);
+            }
+            // If we have a row create a new and overwrite
+            if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
+                println!("Row {:?} found at {}", row, i);
+                let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+                kombisensor_list.get_list_box().insert(&row, i as i32);
+            } else {
+                println!("No row found at {}", i);
+                let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+                kombisensor_list.get_list_box().insert(&row, i as i32);
+            }
 
+        }
+
+        thread::sleep(Duration::from_millis(10));
+
+        ::glib::Continue(true)
+    }));
+
+    // Sensor Update Task
+    gtk::timeout_add(100, clone!(kombisensors => move || {
+        let value: u16 = ::rand::thread_rng().gen_range(0, 1024);
+
+        if let Ok(mut kombisensors) = kombisensors.try_lock() {
+            for mut kombisensor in kombisensors.iter_mut() {
+                for mut sensor in kombisensor.get_sensors_mut() {
+                    sensor.set_max_value(300);
+                    sensor.set_concentration_at_messgas(300);
+                    sensor.set_adc_value_at_messgas(1024);
+                    sensor.set_adc_value(value);
+                }
+            }
+        }
+
+
+        ::glib::Continue(true)
+    }));
 
     // Close Action der InfoBar
     infobar.connect_response(clone!(infobar => move |infobar, _| {
