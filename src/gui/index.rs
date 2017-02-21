@@ -149,6 +149,16 @@ pub fn launch() {
         }
     }
 
+    for (i, kombisensor) in kombisensors.iter().enumerate() {
+        if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
+            println!("Row found at {}", i);
+        } else {
+            println!("No row found at {}", i);
+            let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+            kombisensor_list.get_list_box().insert(&row, i as i32);
+        }
+    }
+
 
     // Close Action der InfoBar
     infobar.connect_response(clone!(infobar => move |infobar, _| {
