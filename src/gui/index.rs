@@ -28,7 +28,7 @@ impl KombisensorList {
         &self.list_box
     }
 
-    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder, kombisensor: &Kombisensor) {
+    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder, kombisensor: &Kombisensor) -> gtk::ListBoxRow {
         let glade_list_box_row_kombisensor = include_str!("list_box_row_kombisensor.glade");
         builder.add_from_string(&glade_list_box_row_kombisensor);
 
@@ -63,7 +63,7 @@ impl KombisensorList {
             label_sensor2_si.set_text(&sensor2.get_si());
         }
 
-        self.list_box.insert(&list_box_row_kombisensor, -1);
+        list_box_row_kombisensor
     }
 }
 
@@ -126,12 +126,29 @@ pub fn launch() {
     // Basic setup des Haupt Fensters
     window_main_setup(&window_main);
 
+    // This part of the application, holds the gtk Listbox
     let mut kombisensor_list = KombisensorList::new(&builder);
-    for id in 0..11 {
+
+    // Test Vector of Kombisensors
+    let mut kombisensors: Vec<Kombisensor> = vec![];
+
+    // For testing we add 10 Kombisensors, Modbus Slave ID from 50 to 60
+    for id in 50..61 {
         let mut kombisensor = Kombisensor::new();
         kombisensor.set_modbus_slave_id(id);
-        kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+        kombisensors.push(kombisensor);
     }
+
+    for (i, kombisensor) in kombisensors.iter().enumerate() {
+        if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
+            println!("Row found at {}", i);
+        } else {
+            println!("No row found at {}", i);
+            let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+            kombisensor_list.get_list_box().insert(&row, i as i32);
+        }
+    }
+
 
     // Close Action der InfoBar
     infobar.connect_response(clone!(infobar => move |infobar, _| {
