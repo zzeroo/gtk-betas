@@ -13,7 +13,6 @@ use xmz_server::Kombisensor;
 
 struct KombisensorList {
     list_box: gtk::ListBox,
-    rows: HashSet<gtk::ListBoxRow>,
 }
 
 impl KombisensorList {
@@ -22,15 +21,18 @@ impl KombisensorList {
 
         KombisensorList {
             list_box: list_box,
-            rows: HashSet::new(),
         }
     }
 
-    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder, kombisensor: &Kombisensor) {
-        let template_list_row_kombisensor_glade = include_str!("template_list_row_kombisensor.glade");
-        builder.add_from_string(&template_list_row_kombisensor_glade);
+    pub fn get_list_box(&self) -> &gtk::ListBox {
+        &self.list_box
+    }
 
-        let template_list_row_kombisensor: gtk::ListBoxRow = build!(builder, "template_list_row_kombisensor");
+    pub fn kombisensor_to_row(&mut self, builder: &gtk::Builder, kombisensor: &Kombisensor) {
+        let glade_list_box_row_kombisensor = include_str!("list_box_row_kombisensor.glade");
+        builder.add_from_string(&glade_list_box_row_kombisensor);
+
+        let list_box_row_kombisensor: gtk::ListBoxRow = build!(builder, "list_box_row_kombisensor");
 
 
         let label_modbus_slave_id: gtk::Label = build!(builder, "label_modbus_slave_id");
@@ -61,7 +63,7 @@ impl KombisensorList {
             label_sensor2_si.set_text(&sensor2.get_si());
         }
 
-        self.list_box.insert(&template_list_row_kombisensor, -1);
+        self.list_box.insert(&list_box_row_kombisensor, -1);
     }
 }
 

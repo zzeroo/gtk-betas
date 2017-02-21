@@ -28,7 +28,7 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
   <!-- interface-description Beta window tests for gtk guis -->
   <!-- interface-copyright Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
   <!-- interface-authors Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
-  <object class="GtkListBoxRow" id="template_list_row_kombisensor">
+  <object class="GtkListBoxRow" id="list_box_row_kombisensor">
     <property name="width_request">100</property>
     <property name="height_request">80</property>
     <property name="visible">True</property>
