@@ -172,23 +172,23 @@ pub fn launch() {
     }));
 
     // Sensor Update Task
-    gtk::timeout_add(100, clone!(kombisensors => move || {
-
-        if let Ok(mut kombisensors) = kombisensors.try_lock() {
-            for mut kombisensor in kombisensors.iter_mut() {
-                for mut sensor in kombisensor.get_sensors_mut() {
-                    let value: u16 = ::rand::thread_rng().gen_range(0, 1024);
-                    sensor.set_max_value(300);
-                    sensor.set_concentration_at_messgas(300);
-                    sensor.set_adc_value_at_messgas(1024);
-                    sensor.set_adc_value(value);
-                }
-            }
-        }
-
-
-        ::glib::Continue(true)
-    }));
+    // gtk::timeout_add(100, clone!(kombisensors => move || {
+    //
+    //     if let Ok(mut kombisensors) = kombisensors.try_lock() {
+    //         for mut kombisensor in kombisensors.iter_mut() {
+    //             for mut sensor in kombisensor.get_sensors_mut() {
+    //                 let value: u16 = ::rand::thread_rng().gen_range(0, 1024);
+    //                 sensor.set_max_value(300);
+    //                 sensor.set_concentration_at_messgas(300);
+    //                 sensor.set_adc_value_at_messgas(1024);
+    //                 sensor.set_adc_value(value);
+    //             }
+    //         }
+    //     }
+    //
+    //
+    //     ::glib::Continue(true)
+    // }));
 
     // Close Action der InfoBar
     infobar.connect_response(clone!(infobar => move |infobar, _| {
