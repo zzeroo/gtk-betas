@@ -13,7 +13,6 @@ use std::thread;
 use xmz_server::Kombisensor;
 
 
-
 struct KombisensorList {
     list_box: gtk::ListBox,
 }
