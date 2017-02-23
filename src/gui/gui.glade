@@ -30,11 +30,8 @@ Author: Stefan Müller <s.mueller@it.klt-glt.de>
   <!-- interface-authors Stefan M\303\274ller <s.mueller@it.klt-glt.de> -->
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
-    <property name="double_buffered">False</property>
     <property name="border_width">10</property>
     <property name="window_position">center</property>
-    <property name="default_width">1024</property>
-    <property name="default_height">600</property>
     <property name="decorated">False</property>
     <child>
       <object class="GtkBox">

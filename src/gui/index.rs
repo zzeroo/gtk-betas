@@ -9,8 +9,11 @@ use gtk;
 use gtk::prelude::*;
 use rand::Rng;
 use std::collections::HashSet;
+use std::sync::{Arc, Mutex};
 use std::thread;
+use std::time::Duration;
 use xmz_server::Kombisensor;
+
 
 
 struct KombisensorList {
@@ -100,7 +103,7 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
 
 
 
-pub fn launch() {
+pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
     if gtk::init().is_err() {
         println!("Failed to initalize GTK.");
 
@@ -131,44 +134,32 @@ pub fn launch() {
     // This part of the application, holds the gtk Listbox
     let mut kombisensor_list = KombisensorList::new(&builder);
 
-    // Test Vector of Kombisensors
-    let mut kombisensors: Vec<Kombisensor> = vec![];
 
-    // For testing we add 10 Kombisensors, Modbus Slave ID from 50 to 60
-    for id in 50..61 {
-        let mut kombisensor = Kombisensor::new();
-        kombisensor.set_modbus_slave_id(id);
-        kombisensors.push(kombisensor);
-    }
 
-    use std::sync::{Arc, Mutex};
-    use std::time::Duration;
-    let kombisensors = Arc::new(Mutex::new(kombisensors));
-
-    // GUI Update Task
-    gtk::timeout_add(100, clone!(kombisensors => move || {
-
-        if let Ok(kombisensors) = kombisensors.try_lock() {
-            let lenght = kombisensors.len() as i32;
-            for (i, kombisensor) in kombisensors.iter().enumerate() {
-                // Remove all Rows for they we dont have a kombisensor. If there are less kombisensors then rows.
-                while let Some(row) = kombisensor_list.get_list_box().get_row_at_index(lenght + 1) {
-                    kombisensor_list.get_list_box().remove(&row);
-                }
-                // If we have a row create a new and overwrite
-                if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
-                    let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
-                    kombisensor_list.get_list_box().insert(&row, i as i32);
-                } else {
-                    let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
-                    kombisensor_list.get_list_box().insert(&row, i as i32);
-                }
-
-            }
-        }
-
-        ::glib::Continue(true)
-    }));
+    // // GUI Update Task
+    // gtk::timeout_add(100, clone!(kombisensors => move || {
+    //
+    //     if let Ok(kombisensors) = kombisensors.try_lock() {
+    //         let lenght = kombisensors.len() as i32;
+    //         for (i, kombisensor) in kombisensors.iter().enumerate() {
+    //             // Remove all Rows for they we dont have a kombisensor. If there are less kombisensors then rows.
+    //             while let Some(row) = kombisensor_list.get_list_box().get_row_at_index(lenght + 1) {
+    //                 kombisensor_list.get_list_box().remove(&row);
+    //             }
+    //             // If we have a row create a new and overwrite
+    //             if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
+    //                 let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+    //                 kombisensor_list.get_list_box().insert(&row, i as i32);
+    //             } else {
+    //                 let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
+    //                 kombisensor_list.get_list_box().insert(&row, i as i32);
+    //             }
+    //
+    //         }
+    //     }
+    //
+    //     ::glib::Continue(true)
+    // }));
 
     // Sensor Update Task
     // gtk::timeout_add(100, clone!(kombisensors => move || {

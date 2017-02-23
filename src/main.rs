@@ -1,10 +1,32 @@
 extern crate gtk_betas;
+extern crate xmz_server;
 
 use gtk_betas::errors::*;
+use std::sync::{Arc, Mutex};
+use std::time::Duration;
+use xmz_server::Kombisensor;
 
+
+fn setup_kombisensors() -> Result<Arc<Mutex<Vec<Kombisensor>>>> {
+    // Test Vector of Kombisensors
+    let mut kombisensors: Vec<Kombisensor> = vec![];
+
+    // For testing we add 10 Kombisensors, Modbus Slave ID from 50 to 60
+    for id in 50..61 {
+        let mut kombisensor = Kombisensor::new();
+        kombisensor.set_modbus_slave_id(id);
+        kombisensors.push(kombisensor);
+    }
+
+    let kombisensors = Arc::new(Mutex::new(kombisensors));
+
+    Ok(kombisensors)
+}
 
 fn run() -> Result<()> {
-    gtk_betas::gui::index::launch();
+    if let Ok(kombisensors) = setup_kombisensors() {
+        gtk_betas::gui::index::launch(kombisensors);
+    }
 
     Ok(())
 }
