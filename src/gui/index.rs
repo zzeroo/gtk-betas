@@ -137,7 +137,7 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
 
 
     // GUI Update Task
-    gtk::timeout_add(1000, clone!(kombisensors => move || {
+    gtk::idle_add(clone!(kombisensors => move || {
         if let Ok(kombisensors) = kombisensors.try_lock() {
             let lenght = kombisensors.len() as i32;
             for (i, kombisensor) in kombisensors.iter().enumerate() {
@@ -156,7 +156,7 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
 
             }
         }
-
+        
         ::glib::Continue(true)
     }));
 
