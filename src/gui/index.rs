@@ -157,7 +157,7 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
             }
         }
 
-        thread::sleep(Duration::from_millis(10));
+        thread::sleep(Duration::from_millis(100));
 
         ::glib::Continue(true)
     }));
