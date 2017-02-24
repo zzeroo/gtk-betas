@@ -73,6 +73,23 @@ impl KombisensorList {
 }
 
 
+fn setup_kombisensors() -> Arc<Mutex<Vec<Kombisensor>>> {
+    // Test Vector of Kombisensors
+    let mut kombisensors: Vec<Kombisensor> = vec![];
+
+    // For testing we add 10 Kombisensors, Modbus Slave ID from 50 to 60
+    for id in 50..60 {
+        let mut kombisensor = Kombisensor::new();
+        kombisensor.set_modbus_slave_id(id);
+        kombisensors.push(kombisensor);
+    }
+
+    let kombisensors = Arc::new(Mutex::new(kombisensors));
+
+    kombisensors
+}
+
+
 fn window_main_setup(window: &gtk::Window) -> Result<()> {
     let window_title = format!("{} {}",
                 env!("CARGO_PKG_DESCRIPTION"),
@@ -102,8 +119,7 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
 }
 
 
-
-pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
+pub fn launch() {
     if gtk::init().is_err() {
         println!("Failed to initalize GTK.");
 
@@ -119,7 +135,7 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
 
     let builder = gtk::Builder::new();
 
-    let gui_glade = include_str!("gui.glade");
+    let gui_glade = include_str!("list_box.glade");
     builder.add_from_string(&gui_glade);
 
     let window_main: gtk::Window = build!(builder, "window_main");
@@ -134,7 +150,7 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
     // This part of the application, holds the gtk Listbox
     let mut kombisensor_list = KombisensorList::new(&builder);
 
-
+    let kombisensors = setup_kombisensors();
 
     // GUI Update Task
     gtk::idle_add(clone!(kombisensors => move || {
@@ -143,15 +159,21 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
             for (i, kombisensor) in kombisensors.iter().enumerate() {
                 // Remove all Rows for they we dont have a kombisensor. If there are less kombisensors then rows.
                 while let Some(row) = kombisensor_list.get_list_box().get_row_at_index(lenght + 1) {
+                    println!("lenght+1: {}", lenght + 1);
+                    println!("Drop row: {}", i);
                     kombisensor_list.get_list_box().remove(&row);
                 }
-                // If we have a row create a new and overwrite
+
+                // If we have a row overwrite
                 if let Some(row) = kombisensor_list.get_list_box().get_row_at_index(i as i32) {
+                    println!("update row: {}", i);
                     let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
                     kombisensor_list.get_list_box().insert(&row, i as i32);
                 } else {
+                    // If we dont have a row, create one
+                    println!("CREATE row: {}", i);
                     let row = kombisensor_list.kombisensor_to_row(&builder, &kombisensor);
-                    kombisensor_list.get_list_box().insert(&row, i as i32);
+                    kombisensor_list.get_list_box().insert(&row, -1);
                 }
 
             }
@@ -161,25 +183,6 @@ pub fn launch(kombisensors: Arc<Mutex<Vec<Kombisensor>>>) {
 
         ::glib::Continue(true)
     }));
-
-    // Sensor Update Task
-    // gtk::timeout_add(100, clone!(kombisensors => move || {
-    //
-    //     if let Ok(mut kombisensors) = kombisensors.try_lock() {
-    //         for mut kombisensor in kombisensors.iter_mut() {
-    //             for mut sensor in kombisensor.get_sensors_mut() {
-    //                 let value: u16 = ::rand::thread_rng().gen_range(0, 1024);
-    //                 sensor.set_max_value(300);
-    //                 sensor.set_concentration_at_messgas(300);
-    //                 sensor.set_adc_value_at_messgas(1024);
-    //                 sensor.set_adc_value(value);
-    //             }
-    //         }
-    //     }
-    //
-    //
-    //     ::glib::Continue(true)
-    // }));
 
     // Close Action der InfoBar
     infobar.connect_response(clone!(infobar => move |infobar, _| {
