@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.20.0 
 
-gtk-betas -
+gtk-betas - 
 Copyright (C) Stefan Müller <s.mueller@it.kls-glt.de>
 
 This program is free software; you can redistribute it and/or
@@ -27,6 +27,55 @@ Author: Stefan Müller <s.mueller@it.kls-glt.de>
   <!-- interface-name gtk-betas -->
   <!-- interface-copyright Stefan M\303\274ller <s.mueller@it.kls-glt.de> -->
   <!-- interface-authors Stefan M\303\274ller <s.mueller@it.kls-glt.de> -->
+  <object class="GtkOverlay" id="overlay_wartung">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label_wartung">
+            <property name="name">label_wartung</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">ANLAGEN Wartung</property>
+            <property name="use_markup">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Die Anlage wurde auf Grund eines eingestellen Wartungsintervals in den Wartungszustand versetzt.
+
+Bitte kontaktieren Sie den Service.
+
+RA-GAS GmbH
+Tel.: 0049 (0) 7151 930440</property>
+            <property name="use_markup">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+      <packing>
+        <property name="index">-1</property>
+      </packing>
+    </child>
+  </object>
   <object class="GtkTreeStore" id="tree_store_kombisensors">
     <columns>
       <!-- column-name modbus_slave_id -->
@@ -43,6 +92,7 @@ Author: Stefan Müller <s.mueller@it.kls-glt.de>
   </object>
   <object class="GtkWindow" id="window_main">
     <property name="can_focus">False</property>
+    <property name="border_width">15</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -137,9 +187,11 @@ Author: Stefan Müller <s.mueller@it.kls-glt.de>
                 <property name="hscrollbar_policy">never</property>
                 <property name="vscrollbar_policy">always</property>
                 <property name="shadow_type">in</property>
-                <property name="min_content_width">1000</property>
+                <property name="min_content_width">1001</property>
                 <property name="min_content_height">400</property>
                 <property name="overlay_scrolling">False</property>
+                <property name="propagate_natural_width">True</property>
+                <property name="propagate_natural_height">True</property>
                 <child>
                   <object class="GtkTreeView" id="tree_view_kombisensors">
                     <property name="visible">True</property>

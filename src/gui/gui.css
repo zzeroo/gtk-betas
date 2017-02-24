@@ -6,3 +6,13 @@ label { color: #222; }
 .bold { font-weight: bold; }
 
 .monospace { font-family: "monospace"; }
+
+/* Wartungsmeldung */
+box#box_test { background: #FFEC42; }
+button#button_wartung { font-weight: bolder; }
+label#label_wartung_title { font-weight: bolder; font-size: 3em; }
+
+label#label_wartung_text { font-size: 1.5em; }
+
+label#label_wartung_text,
+label#label_wartung_title { color: red; }

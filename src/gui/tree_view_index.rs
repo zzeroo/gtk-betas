@@ -58,7 +58,8 @@ pub fn launch() {
 
     let builder = gtk::Builder::new();
 
-    let gui_glade = include_str!("tree_view.glade");
+    // let gui_glade = include_str!("tree_view.glade");
+    let gui_glade = include_str!("tree_view_overlay.glade");
     builder.add_from_string(&gui_glade);
 
     let window_main: gtk::Window = build!(builder, "window_main");
@@ -99,6 +100,16 @@ pub fn launch() {
     tree_view_kombisensors.set_model(Some(&tree_store_kombisensors));
 
 
+    // Overlay
+    let scolled_window_kombisensors: gtk::ScrolledWindow = build!(builder, "scolled_window_kombisensors");
+    let overlay_wartung: gtk::Overlay = build!(builder, "overlay_wartung");
+    let button_wartung: gtk::Button = build!(builder, "button_wartung");
+    let box_test: gtk::Box = build!(builder, "box_test");
+    overlay_wartung.add_overlay(&box_test);
+
+    button_wartung.connect_clicked(move |_| {
+        box_test.hide();
+    });
 
     // // GUI Update Task idle
     // gtk::idle_add(clone!(builder => move || {
@@ -109,12 +120,13 @@ pub fn launch() {
     //     ::glib::Continue(true)
     // }));
 
-    // // GUI Update Task Timeout
-    // gtk::timeout_add(100, clone!(builder => move || {
-    //     println!("Ping");
-    //
-    //     ::glib::Continue(true)
-    // }));
+    // GUI Update Task Timeout
+    gtk::timeout_add(10000, clone!(builder => move || {
+        let box_test: gtk::Box = build!(builder, "box_test");
+        box_test.show();
+
+        ::glib::Continue(true)
+    }));
 
     // Close Action der InfoBar
     info_bar.connect_response(clone!(info_bar => move |info_bar, _| {
@@ -136,6 +148,8 @@ pub fn launch() {
     });
 
     window_main.show_all();
+
+
 
 
     gtk::main();
