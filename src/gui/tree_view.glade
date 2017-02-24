@@ -131,47 +131,81 @@ Author: Stefan Müller <s.mueller@it.kls-glt.de>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <child>
-              <object class="GtkTreeView" id="tree_view_kombisensors">
+              <object class="GtkScrolledWindow" id="scolled_window_kombisensors">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="model">tree_store_kombisensors</property>
-                <property name="headers_visible">False</property>
-                <property name="headers_clickable">False</property>
-                <property name="level_indentation">10</property>
-                <property name="enable_grid_lines">horizontal</property>
-                <child internal-child="selection">
-                  <object class="GtkTreeSelection"/>
-                </child>
+                <property name="hscrollbar_policy">never</property>
+                <property name="vscrollbar_policy">always</property>
+                <property name="shadow_type">in</property>
+                <property name="min_content_width">1000</property>
+                <property name="min_content_height">400</property>
+                <property name="overlay_scrolling">False</property>
                 <child>
-                  <object class="GtkTreeViewColumn" id="tree_view_column_modbus_slave_id">
-                    <property name="title" translatable="yes">modbus_slave_id</property>
-                    <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext_modbus_slave_id"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
+                  <object class="GtkTreeView" id="tree_view_kombisensors">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="model">tree_store_kombisensors</property>
+                    <property name="headers_visible">False</property>
+                    <property name="headers_clickable">False</property>
+                    <property name="level_indentation">10</property>
+                    <property name="enable_grid_lines">horizontal</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
                     </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="tree_view_column_type">
-                    <property name="title" translatable="yes">type</property>
                     <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext_type"/>
-                      <attributes>
-                        <attribute name="text">1</attribute>
-                      </attributes>
+                      <object class="GtkTreeViewColumn" id="tree_view_column_modbus_slave_id">
+                        <property name="title" translatable="yes">modbus_slave_id</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext_modbus_slave_id"/>
+                          <attributes>
+                            <attribute name="text">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
                     </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="tree_view_column_value">
-                    <property name="title" translatable="yes">value</property>
                     <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext_value"/>
-                      <attributes>
-                        <attribute name="text">2</attribute>
-                      </attributes>
+                      <object class="GtkTreeViewColumn" id="tree_view_column_type">
+                        <property name="title" translatable="yes">type</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext_type"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="tree_view_column_value">
+                        <property name="title" translatable="yes">value</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext_value"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="tree_view_column_average">
+                        <property name="title" translatable="yes">average</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext_average"/>
+                          <attributes>
+                            <attribute name="text">3</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="tree_view_column_si">
+                        <property name="title" translatable="yes">si</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext_si"/>
+                          <attributes>
+                            <attribute name="text">4</attribute>
+                          </attributes>
+                        </child>
+                      </object>
                     </child>
                   </object>
                 </child>

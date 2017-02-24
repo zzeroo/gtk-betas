@@ -72,10 +72,30 @@ pub fn launch() {
 
     // Fill Treestore with data
     let tree_store_kombisensors: gtk::TreeStore = build!(builder, "tree_store_kombisensors");
+    for i in 1..10 {
+        let tree_iter = tree_store_kombisensors.insert_with_values(
+            None,
+            None,
+            &[0, 1],
+            &[&i, &format!("Messstelle {}", i)]
+        );
+        // Sensor Messzellen
+        for i in 1..3 {
+            tree_store_kombisensors.insert_with_values(
+                Some(&tree_iter),
+                None,
+                &[1, 2, 3, 4],
+                &[&format!("Messzelle {}", i), &"0.0", &"0.0", &"ppm"]
+            );
+        }
+    }
 
+    // Get the treeview from the builder
+    let tree_view_kombisensors: gtk::TreeView = build!(builder, "tree_view_kombisensors");
+    // Expand all
+    tree_view_kombisensors.expand_all();
 
     // connect model with view
-    let tree_view_kombisensors: gtk::TreeView = build!(builder, "tree_view_kombisensors");
     tree_view_kombisensors.set_model(Some(&tree_store_kombisensors));
 
 
