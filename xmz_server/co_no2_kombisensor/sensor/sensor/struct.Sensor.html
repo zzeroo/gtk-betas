@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Sensor` struct in crate `xmz_server`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Sensor">
+
+    <title>xmz_server::co_no2_kombisensor::sensor::sensor::Sensor - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server/master/share/favicon.ico">
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../../../../xmz_server/index.html'><img src='https://raw.githubusercontent.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server/master/share/xmz-logo.png' alt='logo' width='100'></a>
+        <p class='location'><a href='../../../index.html'>xmz_server</a>::<wbr><a href='../../index.html'>co_no2_kombisensor</a>::<wbr><a href='../index.html'>sensor</a>::<wbr><a href='index.html'>sensor</a></p><script>window.sidebarCurrent = {name: 'Sensor', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>xmz_server</a>::<wbr><a href='../../index.html'>co_no2_kombisensor</a>::<wbr><a href='../index.html'>sensor</a>::<wbr><a href='index.html'>sensor</a>::<wbr><a class='struct' href=''>Sensor</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#41-68' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Sensor { /* fields omitted */ }</pre><div class='docblock'><p>Representation der Firmware Daten einer Messzelle</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#128-560' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Erzeugt eine neue Sensor Instanz</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.new_with_type' class='method'><span id='new_with_type.v' class='invisible'><code>fn <a href='#method.new_with_type' class='fnname'>new_with_type</a>(sensor_type: <a class='enum' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/enum.SensorType.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::SensorType'>SensorType</a>) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Erzeugt eine neue Sensor Instanz, eines bestimmten Sensor Typs</p>
+
+<h1 id='attributes' class='section-header'><a href='#attributes'>Attributes</a></h1>
+<ul>
+<li><code>sensor_type</code>     - <code>SensorType</code> Type der Messzelle</li>
+</ul>
+
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new_with_type</span>(<span class='ident'>SensorType</span>::<span class='ident'>SimulationNO2</span>);</pre>
+</div><h4 id='method.get_number' class='method'><span id='get_number.v' class='invisible'><code>fn <a href='#method.get_number' class='fnname'>get_number</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'><p>Liefert die Sensor Number</p>
+
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_adc_value' class='method'><span id='get_adc_value.v' class='invisible'><code>fn <a href='#method.get_adc_value' class='fnname'>get_adc_value</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_min_value' class='method'><span id='get_min_value.v' class='invisible'><code>fn <a href='#method.get_min_value' class='fnname'>get_min_value</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_max_value' class='method'><span id='get_max_value.v' class='invisible'><code>fn <a href='#method.get_max_value' class='fnname'>get_max_value</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_adc_value_at_nullgas' class='method'><span id='get_adc_value_at_nullgas.v' class='invisible'><code>fn <a href='#method.get_adc_value_at_nullgas' class='fnname'>get_adc_value_at_nullgas</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_adc_value_at_messgas' class='method'><span id='get_adc_value_at_messgas.v' class='invisible'><code>fn <a href='#method.get_adc_value_at_messgas' class='fnname'>get_adc_value_at_messgas</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_concentration_at_nullgas' class='method'><span id='get_concentration_at_nullgas.v' class='invisible'><code>fn <a href='#method.get_concentration_at_nullgas' class='fnname'>get_concentration_at_nullgas</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-8' class='section-header'><a href='#examples-8'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_concentration_at_messgas' class='method'><span id='get_concentration_at_messgas.v' class='invisible'><code>fn <a href='#method.get_concentration_at_messgas' class='fnname'>get_concentration_at_messgas</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-9' class='section-header'><a href='#examples-9'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_sensor_type' class='method'><span id='get_sensor_type.v' class='invisible'><code>fn <a href='#method.get_sensor_type' class='fnname'>get_sensor_type</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-10' class='section-header'><a href='#examples-10'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_si' class='method'><span id='get_si.v' class='invisible'><code>fn <a href='#method.get_si' class='fnname'>get_si</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-11' class='section-header'><a href='#examples-11'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_config' class='method'><span id='get_config.v' class='invisible'><code>fn <a href='#method.get_config' class='fnname'>get_config</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'>
+<h1 id='examples-12' class='section-header'><a href='#examples-12'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_mv' class='method'><span id='get_mv.v' class='invisible'><code>fn <a href='#method.get_mv' class='fnname'>get_mv</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<div class='docblock'><p>Liefert den berechneten milli Volt Wert</p>
+
+<h1 id='examples-13' class='section-header'><a href='#examples-13'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();</pre>
+</div><h4 id='method.get_concentration' class='method'><span id='get_concentration.v' class='invisible'><code>fn <a href='#method.get_concentration' class='fnname'>get_concentration</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f64.html'>f64</a></code></span></h4>
+<div class='docblock'><p>Berechnet die Gaskonzentration mit einer linearen Funktion</p>
+
+<h1 id='examples-14' class='section-header'><a href='#examples-14'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new_with_type</span>(<span class='ident'>SensorType</span>::<span class='ident'>SimulationNO2</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value_at_nullgas</span>(<span class='number'>114</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value_at_messgas</span>(<span class='number'>875</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_concentration_at_nullgas</span>(<span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_concentration_at_messgas</span>(<span class='number'>280</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value</span>(<span class='number'>333</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_concentration</span>(), <span class='number'>80.57818659658344</span>);</pre>
+</div><h4 id='method.set_adc_from_concentration' class='method'><span id='set_adc_from_concentration.v' class='invisible'><code>fn <a href='#method.set_adc_from_concentration' class='fnname'>set_adc_from_concentration</a>(&amp;mut self, concentration: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f64.html'>f64</a>)</code></span></h4>
+<div class='docblock'><p>Berechnet den ADC Wert aus einer gegebenen Konzentration</p>
+
+<h1 id='examples-15' class='section-header'><a href='#examples-15'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new_with_type</span>(<span class='ident'>SensorType</span>::<span class='ident'>SimulationNO2</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value_at_nullgas</span>(<span class='number'>114</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value_at_messgas</span>(<span class='number'>875</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_concentration_at_nullgas</span>(<span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_concentration_at_messgas</span>(<span class='number'>280</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_from_concentration</span>(<span class='number'>80.57818659658344</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value</span>(), <span class='number'>333</span>);</pre>
+</div><h4 id='method.set_adc_value' class='method'><span id='set_adc_value.v' class='invisible'><code>fn <a href='#method.set_adc_value' class='fnname'>set_adc_value</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt den ADC Wert des Sensors</p>
+
+<h1 id='examples-16' class='section-header'><a href='#examples-16'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value</span>(<span class='number'>100</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value</span>(), <span class='number'>100</span>);</pre>
+</div><h4 id='method.set_number' class='method'><span id='set_number.v' class='invisible'><code>fn <a href='#method.set_number' class='fnname'>set_number</a>(&amp;mut self, number: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt die Sensor Nummer</p>
+
+<h1 id='examples-17' class='section-header'><a href='#examples-17'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_number</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_number</span>(<span class='number'>100</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_number</span>(), <span class='number'>100</span>);</pre>
+</div><h4 id='method.set_min_value' class='method'><span id='set_min_value.v' class='invisible'><code>fn <a href='#method.set_min_value' class='fnname'>set_min_value</a>(&amp;mut self, min_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt minimalen Sensormesswert des Sensors</p>
+
+<h1 id='examples-18' class='section-header'><a href='#examples-18'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_min_value</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_min_value</span>(<span class='number'>10</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_min_value</span>(), <span class='number'>10</span>);</pre>
+</div><h4 id='method.set_max_value' class='method'><span id='set_max_value.v' class='invisible'><code>fn <a href='#method.set_max_value' class='fnname'>set_max_value</a>(&amp;mut self, max_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt den maximalen Sensormesswert des Sensors</p>
+
+<h1 id='examples-19' class='section-header'><a href='#examples-19'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_max_value</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_max_value</span>(<span class='number'>10</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_max_value</span>(), <span class='number'>10</span>);</pre>
+</div><h4 id='method.set_adc_value_at_nullgas' class='method'><span id='set_adc_value_at_nullgas.v' class='invisible'><code>fn <a href='#method.set_adc_value_at_nullgas' class='fnname'>set_adc_value_at_nullgas</a>(&amp;mut self, adc_value_at_nullgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt den Nullgas ADC Wert des Sensors</p>
+
+<h1 id='examples-20' class='section-header'><a href='#examples-20'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value_at_nullgas</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value_at_nullgas</span>(<span class='number'>100</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value_at_nullgas</span>(), <span class='number'>100</span>);</pre>
+</div><h4 id='method.set_adc_value_at_messgas' class='method'><span id='set_adc_value_at_messgas.v' class='invisible'><code>fn <a href='#method.set_adc_value_at_messgas' class='fnname'>set_adc_value_at_messgas</a>(&amp;mut self, adc_value_at_messgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt den Messgas ADC Wert des Sensors</p>
+
+<h1 id='examples-21' class='section-header'><a href='#examples-21'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value_at_messgas</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_adc_value_at_messgas</span>(<span class='number'>100</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_adc_value_at_messgas</span>(), <span class='number'>100</span>);</pre>
+</div><h4 id='method.set_concentration_at_nullgas' class='method'><span id='set_concentration_at_nullgas.v' class='invisible'><code>fn <a href='#method.set_concentration_at_nullgas' class='fnname'>set_concentration_at_nullgas</a>(&amp;mut self, concentration_at_nullgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt die Gaskonzentration des Nullgases</p>
+
+<h1 id='examples-22' class='section-header'><a href='#examples-22'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_concentration_at_nullgas</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_concentration_at_nullgas</span>(<span class='number'>100</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_concentration_at_nullgas</span>(), <span class='number'>100</span>);</pre>
+</div><h4 id='method.set_concentration_at_messgas' class='method'><span id='set_concentration_at_messgas.v' class='invisible'><code>fn <a href='#method.set_concentration_at_messgas' class='fnname'>set_concentration_at_messgas</a>(&amp;mut self, concentration_at_messgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt die Gaskonzentration des Messgases</p>
+
+<h1 id='examples-23' class='section-header'><a href='#examples-23'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_concentration_at_messgas</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_concentration_at_messgas</span>(<span class='number'>100</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_concentration_at_messgas</span>(), <span class='number'>100</span>);</pre>
+</div><h4 id='method.set_config' class='method'><span id='set_config.v' class='invisible'><code>fn <a href='#method.set_config' class='fnname'>set_config</a>(&amp;mut self, config: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Setzt Configuration des Sensors</p>
+
+<h1 id='examples-24' class='section-header'><a href='#examples-24'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_config</span>(), <span class='number'>0</span>);
+<span class='ident'>sensor</span>.<span class='ident'>set_config</span>(<span class='number'>1</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>get_config</span>(), <span class='number'>1</span>);</pre>
+</div><h4 id='method.is_enabled' class='method'><span id='is_enabled.v' class='invisible'><code>fn <a href='#method.is_enabled' class='fnname'>is_enabled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Liefert true oder false je nachdem ob der Sensor aktiv Ist</p>
+
+<h1 id='examples-25' class='section-header'><a href='#examples-25'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>sensor</span> <span class='op'>=</span> <span class='ident'>Sensor</span>::<span class='ident'>new_with_type</span>(<span class='ident'>SensorType</span>::<span class='ident'>SimulationNO2</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>sensor</span>.<span class='ident'>is_enabled</span>(), <span class='bool-val'>false</span>);</pre>
+</div><h4 id='method.update_adc_values_time' class='method'><span id='update_adc_values_time.v' class='invisible'><code>fn <a href='#method.update_adc_values_time' class='fnname'>update_adc_values_time</a>(&amp;mut self)</code></span></h4>
+<div class='docblock'><p>Update die Values, Timestamp Tuppel</p>
+</div><h4 id='method.get_adc_values_time' class='method'><span id='get_adc_values_time.v' class='invisible'><code>fn <a href='#method.get_adc_values_time' class='fnname'>get_adc_values_time</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/struct.Instant.html' title='std::time::Instant'>Instant</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></span></h4>
+<h4 id='method.average' class='method'><span id='average.v' class='invisible'><code>fn <a href='#method.average' class='fnname'>average</a>(&amp;mut self, duration: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<h4 id='method.weighten_average' class='method'><span id='weighten_average.v' class='invisible'><code>fn <a href='#method.weighten_average' class='fnname'>weighten_average</a>(&amp;mut self, duration: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></span></h4>
+<h4 id='method.get_concentration_from_adc' class='method'><span id='get_concentration_from_adc.v' class='invisible'><code>fn <a href='#method.get_concentration_from_adc' class='fnname'>get_concentration_from_adc</a>(&amp;self, adc_value: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f64.html'>f64</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#39' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#39' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/sensor/sensor.rs.html#82-99' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class='method'><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "xmz_server";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

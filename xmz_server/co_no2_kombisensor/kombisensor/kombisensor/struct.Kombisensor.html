@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Kombisensor` struct in crate `xmz_server`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Kombisensor">
+
+    <title>xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server/master/share/favicon.ico">
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../../../../xmz_server/index.html'><img src='https://raw.githubusercontent.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server/master/share/xmz-logo.png' alt='logo' width='100'></a>
+        <p class='location'><a href='../../../index.html'>xmz_server</a>::<wbr><a href='../../index.html'>co_no2_kombisensor</a>::<wbr><a href='../index.html'>kombisensor</a>::<wbr><a href='index.html'>kombisensor</a></p><script>window.sidebarCurrent = {name: 'Kombisensor', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>xmz_server</a>::<wbr><a href='../../index.html'>co_no2_kombisensor</a>::<wbr><a href='../index.html'>kombisensor</a>::<wbr><a href='index.html'>kombisensor</a>::<wbr><a class='struct' href=''>Kombisensor</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#18-28' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Kombisensor { /* fields omitted */ }</pre><div class='docblock'><p>Platine des CO-NO2-Kombisensor-Mod</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#60-309' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Erzeugt eine neue Instanz</p>
+</div><h4 id='method.get_modbus_slave_id' class='method'><span id='get_modbus_slave_id.v' class='invisible'><code>fn <a href='#method.get_modbus_slave_id' class='fnname'>get_modbus_slave_id</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></span></h4>
+<div class='docblock'><p>Liefert die Modbus Adresse des Kombisensors</p>
+
+<p>Jede Platine, eine Kombisensor mit mehreren Sensormeßzellen, hat eine Modbus Slave ID
+die so genannte Modbus Adresse.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>kombisensor</span> <span class='op'>=</span> <span class='ident'>Kombisensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>kombisensor</span>.<span class='ident'>get_modbus_slave_id</span>(), <span class='number'>247</span>);</pre>
+</div><h4 id='method.get_kombisensor_type' class='method'><span id='get_kombisensor_type.v' class='invisible'><code>fn <a href='#method.get_kombisensor_type' class='fnname'>get_kombisensor_type</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></span></h4>
+<div class='docblock'><p>Liefert den Typ des Kombisensors als String</p>
+
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>kombisensor</span> <span class='op'>=</span> <span class='ident'>Kombisensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='string'>&quot;RA-GAS GmbH CO/ NO2 Kombisensor Modbus&quot;</span>, <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>kombisensor</span>.<span class='ident'>get_kombisensor_type</span>()));</pre>
+</div><h4 id='method.get_sensor' class='method'><span id='get_sensor.v' class='invisible'><code>fn <a href='#method.get_sensor' class='fnname'>get_sensor</a>(&amp;self, num: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>&gt;</code></span></h4>
+<div class='docblock'><p>Liefert eine Sensor Referenz in Option verpackt</p>
+
+<h1 id='parameters' class='section-header'><a href='#parameters'>Parameters</a></h1>
+<p><code>num</code>   - Nummer des gesuchten Sensors</p>
+
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;</pre>
+</div><h4 id='method.get_sensor_mut' class='method'><span id='get_sensor_mut.v' class='invisible'><code>fn <a href='#method.get_sensor_mut' class='fnname'>get_sensor_mut</a>(&amp;mut self, num: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>&gt;</code></span></h4>
+<div class='docblock'><p>Liefert eine mutable Sensor Referenz in Option verpackt</p>
+
+<h1 id='parameters-1' class='section-header'><a href='#parameters-1'>Parameters</a></h1>
+<p><code>num</code>   - Nummer des gesuchten Sensors</p>
+
+<h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;</pre>
+</div><h4 id='method.get_sensors' class='method'><span id='get_sensors.v' class='invisible'><code>fn <a href='#method.get_sensors' class='fnname'>get_sensors</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>&gt;</code></span></h4>
+<div class='docblock'><p>Liefert die Sensoren als Referenze zu einem Vector</p>
+
+<h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;</pre>
+</div><h4 id='method.get_sensors_mut' class='method'><span id='get_sensors_mut.v' class='invisible'><code>fn <a href='#method.get_sensors_mut' class='fnname'>get_sensors_mut</a>(&amp;mut self) -&gt; &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>&gt;</code></span></h4>
+<div class='docblock'><p>Liefert die Sensoren in einem mutablen Vector Slice</p>
+
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;</pre>
+</div><h4 id='method.get_error_count' class='method'><span id='get_error_count.v' class='invisible'><code>fn <a href='#method.get_error_count' class='fnname'>get_error_count</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></span></h4>
+<div class='docblock'><p>Liefert den Fehlerzähler zurück</p>
+
+<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='ident'>kombisensor</span> <span class='op'>=</span> <span class='ident'>Kombisensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>kombisensor</span>.<span class='ident'>get_error_count</span>(), <span class='number'>0</span>);</pre>
+</div><h4 id='method.sensors_mut' class='method'><span id='sensors_mut.v' class='invisible'><code>fn <a href='#method.sensors_mut' class='fnname'>sensors_mut</a>(&amp;mut self) -&gt; &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/sensor/sensor/struct.Sensor.html' title='xmz_server::co_no2_kombisensor::sensor::sensor::Sensor'>Sensor</a>&gt;</code></span></h4>
+<div class='docblock'><p>Mutabler Iterrator
+FIXME: Doku fehlt</p>
+</div><h4 id='method.inc_error_count' class='method'><span id='inc_error_count.v' class='invisible'><code>fn <a href='#method.inc_error_count' class='fnname'>inc_error_count</a>(&amp;mut self)</code></span></h4>
+<div class='docblock'><p>Erhöht den Fehlerzähler um Eins</p>
+
+<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>kombisensor</span> <span class='op'>=</span> <span class='ident'>Kombisensor</span>::<span class='ident'>new</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>kombisensor</span>.<span class='ident'>get_error_count</span>(), <span class='number'>0</span>);
+<span class='ident'>kombisensor</span>.<span class='ident'>inc_error_count</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>kombisensor</span>.<span class='ident'>get_error_count</span>(), <span class='number'>1</span>);</pre>
+</div><h4 id='method.reset_error_count' class='method'><span id='reset_error_count.v' class='invisible'><code>fn <a href='#method.reset_error_count' class='fnname'>reset_error_count</a>(&amp;mut self)</code></span></h4>
+<div class='docblock'><p>Setzt den Fehlerzähler auf Null zurück</p>
+
+<h1 id='examples-8' class='section-header'><a href='#examples-8'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>kombisensor</span> <span class='op'>=</span> <span class='ident'>Kombisensor</span>::<span class='ident'>new</span>();
+<span class='ident'>kombisensor</span>.<span class='ident'>inc_error_count</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>kombisensor</span>.<span class='ident'>get_error_count</span>(), <span class='number'>1</span>);
+<span class='ident'>kombisensor</span>.<span class='ident'>reset_error_count</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>kombisensor</span>.<span class='ident'>get_error_count</span>(), <span class='number'>0</span>);</pre>
+</div><h4 id='method.set_modbus_slave_id' class='method'><span id='set_modbus_slave_id.v' class='invisible'><code>fn <a href='#method.set_modbus_slave_id' class='fnname'>set_modbus_slave_id</a>(&amp;mut self, modbus_slave_id: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>)</code></span></h4>
+<div class='docblock'><p>Setzt die Modbus Slave Id</p>
+
+<h1 id='examples-9' class='section-header'><a href='#examples-9'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;</pre>
+</div><h4 id='method.set_version' class='method'><span id='set_version.v' class='invisible'><code>fn <a href='#method.set_version' class='fnname'>set_version</a>(&amp;mut self, version: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>)</code></span></h4>
+<div class='docblock'><p>Setzt die Modbus Slave Id</p>
+
+<h1 id='examples-10' class='section-header'><a href='#examples-10'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>xmz_server</span>::<span class='kw-2'>*</span>;</pre>
+</div><h4 id='method.set_sensors_and_values' class='method'><span id='set_sensors_and_values.v' class='invisible'><code>fn <a href='#method.set_sensors_and_values' class='fnname'>set_sensors_and_values</a>(&amp;mut self,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_number: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_number: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_adc_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_adc_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_min_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_min_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_max_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_max_value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_adc_value_at_nullgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_adc_value_at_nullgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_adc_value_at_messgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_adc_value_at_messgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_concentration_at_nullgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_concentration_at_nullgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_concentration_at_messgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_concentration_at_messgas: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor1_config: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sensor2_config: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>)</code></span></h4>
+<div class='docblock'><p>Diese Funktion stellt erstmal sicher das jeder Kombisensor auch 2 Sensor Datenstructuren
+besitzt. Beim aller ersten Start des Systems z.B. besitzt jede Kombisensor Datenstruktur nur
+ein leeres Vec<Sensor>. Da die Sensor Werte meistens nicht in der Konfiguration zu finden sind.</p>
+
+<p>Kein Witz, die Parameter dieser Funktion sind wirklich so zahlreich.</p>
+</div><h4 id='method.parse' class='method'><span id='parse.v' class='invisible'><code>fn <a href='#method.parse' class='fnname'>parse</a>&lt;'a&gt;(&amp;mut self, input: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='../../../../nom/internal/enum.IResult.html' title='nom::internal::IResult'>IResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#16' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#16' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#15' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#15' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../../../xmz_server/co_no2_kombisensor/kombisensor/kombisensor/struct.Kombisensor.html' title='xmz_server::co_no2_kombisensor::kombisensor::kombisensor::Kombisensor'>Kombisensor</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/xmz_server/co_no2_kombisensor/kombisensor/kombisensor.rs.html#30-43' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class='method'><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "xmz_server";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

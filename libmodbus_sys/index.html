@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `libmodbus_sys` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, libmodbus_sys">
+
+    <title>libmodbus_sys - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server/master/share/favicon.ico">
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../libmodbus_sys/index.html'><img src='https://raw.githubusercontent.com/Kliemann-Service-GmbH/xMZ-Mod-Touch-Server/master/share/xmz-logo.png' alt='logo' width='100'></a>
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'libmodbus_sys', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>libmodbus_sys</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/libmodbus_sys/lib.rs.html#1-214' title='goto source code'>[src]</a></span></h1>
+<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct._modbus.html'
+                                  title='libmodbus_sys::_modbus'>_modbus</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.modbus_backend_t.html'
+                                  title='libmodbus_sys::modbus_backend_t'>modbus_backend_t</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.modbus_mapping_t.html'
+                                  title='libmodbus_sys::modbus_mapping_t'>modbus_mapping_t</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.sft_t.html'
+                                  title='libmodbus_sys::sft_t'>sft_t</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_ERROR_RECOVERY_LINK.html'
+                                  title='libmodbus_sys::MODBUS_ERROR_RECOVERY_LINK'>MODBUS_ERROR_RECOVERY_LINK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_ERROR_RECOVERY_NONE.html'
+                                  title='libmodbus_sys::MODBUS_ERROR_RECOVERY_NONE'>MODBUS_ERROR_RECOVERY_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_ERROR_RECOVERY_PROTOCOL.html'
+                                  title='libmodbus_sys::MODBUS_ERROR_RECOVERY_PROTOCOL'>MODBUS_ERROR_RECOVERY_PROTOCOL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_RTU_MAX_ADU_LENGTH.html'
+                                  title='libmodbus_sys::MODBUS_RTU_MAX_ADU_LENGTH'>MODBUS_RTU_MAX_ADU_LENGTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_RTU_RS232.html'
+                                  title='libmodbus_sys::MODBUS_RTU_RS232'>MODBUS_RTU_RS232</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_RTU_RS485.html'
+                                  title='libmodbus_sys::MODBUS_RTU_RS485'>MODBUS_RTU_RS485</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_RTU_RTS_DOWN.html'
+                                  title='libmodbus_sys::MODBUS_RTU_RTS_DOWN'>MODBUS_RTU_RTS_DOWN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_RTU_RTS_NONE.html'
+                                  title='libmodbus_sys::MODBUS_RTU_RTS_NONE'>MODBUS_RTU_RTS_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MODBUS_RTU_RTS_UP.html'
+                                  title='libmodbus_sys::MODBUS_RTU_RTS_UP'>MODBUS_RTU_RTS_UP</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MSG_CONFIRMATION.html'
+                                  title='libmodbus_sys::MSG_CONFIRMATION'>MSG_CONFIRMATION</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant.MSG_INDICATION.html'
+                                  title='libmodbus_sys::MSG_INDICATION'>MSG_INDICATION</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._MODBUS_BACKEND_TYPE_RTU.html'
+                                  title='libmodbus_sys::_MODBUS_BACKEND_TYPE_RTU'>_MODBUS_BACKEND_TYPE_RTU</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='constant' href='constant._MODBUS_BACKEND_TYPE_TCP.html'
+                                  title='libmodbus_sys::_MODBUS_BACKEND_TYPE_TCP'>_MODBUS_BACKEND_TYPE_TCP</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_close.html'
+                                  title='libmodbus_sys::modbus_close'>modbus_close</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_connect.html'
+                                  title='libmodbus_sys::modbus_connect'>modbus_connect</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_flush.html'
+                                  title='libmodbus_sys::modbus_flush'>modbus_flush</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_free.html'
+                                  title='libmodbus_sys::modbus_free'>modbus_free</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_get_byte_timeout.html'
+                                  title='libmodbus_sys::modbus_get_byte_timeout'>modbus_get_byte_timeout</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_get_header_length.html'
+                                  title='libmodbus_sys::modbus_get_header_length'>modbus_get_header_length</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_get_response_timeout.html'
+                                  title='libmodbus_sys::modbus_get_response_timeout'>modbus_get_response_timeout</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_get_socket.html'
+                                  title='libmodbus_sys::modbus_get_socket'>modbus_get_socket</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_mapping_free.html'
+                                  title='libmodbus_sys::modbus_mapping_free'>modbus_mapping_free</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_mapping_new.html'
+                                  title='libmodbus_sys::modbus_mapping_new'>modbus_mapping_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_mapping_new_start_address.html'
+                                  title='libmodbus_sys::modbus_mapping_new_start_address'>modbus_mapping_new_start_address</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_mask_write_register.html'
+                                  title='libmodbus_sys::modbus_mask_write_register'>modbus_mask_write_register</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_new_rtu.html'
+                                  title='libmodbus_sys::modbus_new_rtu'>modbus_new_rtu</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_read_bits.html'
+                                  title='libmodbus_sys::modbus_read_bits'>modbus_read_bits</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_read_input_bits.html'
+                                  title='libmodbus_sys::modbus_read_input_bits'>modbus_read_input_bits</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_read_input_registers.html'
+                                  title='libmodbus_sys::modbus_read_input_registers'>modbus_read_input_registers</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_read_registers.html'
+                                  title='libmodbus_sys::modbus_read_registers'>modbus_read_registers</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_receive.html'
+                                  title='libmodbus_sys::modbus_receive'>modbus_receive</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_receive_confirmation.html'
+                                  title='libmodbus_sys::modbus_receive_confirmation'>modbus_receive_confirmation</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_reply.html'
+                                  title='libmodbus_sys::modbus_reply'>modbus_reply</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_reply_exception.html'
+                                  title='libmodbus_sys::modbus_reply_exception'>modbus_reply_exception</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_report_slave_id.html'
+                                  title='libmodbus_sys::modbus_report_slave_id'>modbus_report_slave_id</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_get_rts.html'
+                                  title='libmodbus_sys::modbus_rtu_get_rts'>modbus_rtu_get_rts</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_get_rts_delay.html'
+                                  title='libmodbus_sys::modbus_rtu_get_rts_delay'>modbus_rtu_get_rts_delay</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_get_serial_mode.html'
+                                  title='libmodbus_sys::modbus_rtu_get_serial_mode'>modbus_rtu_get_serial_mode</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_set_custom_rts.html'
+                                  title='libmodbus_sys::modbus_rtu_set_custom_rts'>modbus_rtu_set_custom_rts</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_set_rts.html'
+                                  title='libmodbus_sys::modbus_rtu_set_rts'>modbus_rtu_set_rts</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_set_rts_delay.html'
+                                  title='libmodbus_sys::modbus_rtu_set_rts_delay'>modbus_rtu_set_rts_delay</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_rtu_set_serial_mode.html'
+                                  title='libmodbus_sys::modbus_rtu_set_serial_mode'>modbus_rtu_set_serial_mode</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_send_raw_request.html'
+                                  title='libmodbus_sys::modbus_send_raw_request'>modbus_send_raw_request</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_set_byte_timeout.html'
+                                  title='libmodbus_sys::modbus_set_byte_timeout'>modbus_set_byte_timeout</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_set_debug.html'
+                                  title='libmodbus_sys::modbus_set_debug'>modbus_set_debug</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_set_error_recovery.html'
+                                  title='libmodbus_sys::modbus_set_error_recovery'>modbus_set_error_recovery</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_set_response_timeout.html'
+                                  title='libmodbus_sys::modbus_set_response_timeout'>modbus_set_response_timeout</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_set_slave.html'
+                                  title='libmodbus_sys::modbus_set_slave'>modbus_set_slave</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_set_socket.html'
+                                  title='libmodbus_sys::modbus_set_socket'>modbus_set_socket</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_strerror.html'
+                                  title='libmodbus_sys::modbus_strerror'>modbus_strerror</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_write_and_read_registers.html'
+                                  title='libmodbus_sys::modbus_write_and_read_registers'>modbus_write_and_read_registers</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_write_bit.html'
+                                  title='libmodbus_sys::modbus_write_bit'>modbus_write_bit</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_write_bits.html'
+                                  title='libmodbus_sys::modbus_write_bits'>modbus_write_bits</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_write_register.html'
+                                  title='libmodbus_sys::modbus_write_register'>modbus_write_register</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modbus_write_registers.html'
+                                  title='libmodbus_sys::modbus_write_registers'>modbus_write_registers</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.modbus_backend_type_t.html'
+                                  title='libmodbus_sys::modbus_backend_type_t'>modbus_backend_type_t</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.modbus_error_recovery_mode.html'
+                                  title='libmodbus_sys::modbus_error_recovery_mode'>modbus_error_recovery_mode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.modbus_t.html'
+                                  title='libmodbus_sys::modbus_t'>modbus_t</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='type' href='type.msg_type_t.html'
+                                  title='libmodbus_sys::msg_type_t'>msg_type_t</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "libmodbus_sys";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

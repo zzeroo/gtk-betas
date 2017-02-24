@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["BidiType",""],["Direction",""],["Gravity",""],["GravityHint",""],["Script",""],["Stretch",""],["Style",""],["Variant",""],["Weight",""]],"mod":[["widgets",""]],"struct":[["FontDescription",""],["FontMask",""],["GlyphString",""],["Item",""]],"trait":[["Matrix",""],["Rectangle",""]]});

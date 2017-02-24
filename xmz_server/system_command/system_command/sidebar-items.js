@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["call","Führt den als Parameter `command` übergebenen Befehl in einer `sh -c` aus, oder wirft ein Fehler aus."],["is_mounted","Prüft ob der übergebene Pfad gemouted ist"],["read_in","Liest eine Text Datei ein und liefert ein String Result"]]});

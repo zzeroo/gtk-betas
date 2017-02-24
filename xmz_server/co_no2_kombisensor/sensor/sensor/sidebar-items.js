@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SI","SI Einheit des zu messenden Mediums"],["SensorType","Typ der Messzelle"]],"struct":[["Sensor","Representation der Firmware Daten einer Messzelle"]]});

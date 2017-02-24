@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["KombisensorType",""]],"fn":[["to_bytes","Wandelt den gegebenen Vec<u16> in ein Slice aus bytes"]],"struct":[["Kombisensor","Platine des CO-NO2-Kombisensor-Mod"]]});
