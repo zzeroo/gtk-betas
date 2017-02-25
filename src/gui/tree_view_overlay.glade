@@ -176,13 +176,15 @@ Tel.: 0049 (0) 7151 930440</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="model">tree_store_kombisensors</property>
-                        <property name="headers_visible">False</property>
+                        <property name="rules_hint">True</property>
+                        <property name="enable_grid_lines">horizontal</property>
+                        <property name="enable_tree_lines">True</property>
                         <child internal-child="selection">
                           <object class="GtkTreeSelection"/>
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="tree_view_column_modbus_slave_id">
-                            <property name="title" translatable="yes">modbus_slave_id</property>
+                            <property name="title" translatable="yes">Modbus ID</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext_modbus_slave_id"/>
                               <attributes>
@@ -193,7 +195,8 @@ Tel.: 0049 (0) 7151 930440</property>
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="tree_view_column_type">
-                            <property name="title" translatable="yes">type</property>
+                            <property name="title" translatable="yes">Bezeichnung</property>
+                            <property name="expand">True</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext_type"/>
                               <attributes>
@@ -204,7 +207,8 @@ Tel.: 0049 (0) 7151 930440</property>
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="tree_view_column_value">
-                            <property name="title" translatable="yes">value</property>
+                            <property name="title" translatable="yes">Direktwert</property>
+                            <property name="expand">True</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext_value"/>
                               <attributes>
@@ -215,7 +219,8 @@ Tel.: 0049 (0) 7151 930440</property>
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="tree_view_column_average">
-                            <property name="title" translatable="yes">average</property>
+                            <property name="title" translatable="yes">Mittelwert</property>
+                            <property name="expand">True</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext_average"/>
                               <attributes>
@@ -226,7 +231,7 @@ Tel.: 0049 (0) 7151 930440</property>
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="tree_view_column_si">
-                            <property name="title" translatable="yes">si</property>
+                            <property name="expand">True</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext_si"/>
                               <attributes>
