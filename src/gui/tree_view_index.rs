@@ -104,11 +104,11 @@ pub fn launch() {
     let scolled_window_kombisensors: gtk::ScrolledWindow = build!(builder, "scolled_window_kombisensors");
     let overlay_wartung: gtk::Overlay = build!(builder, "overlay_wartung");
     let button_wartung: gtk::Button = build!(builder, "button_wartung");
-    let box_test: gtk::Box = build!(builder, "box_test");
-    overlay_wartung.add_overlay(&box_test);
+    let box_wartung: gtk::Box = build!(builder, "box_wartung");
+    overlay_wartung.add_overlay(&box_wartung);
 
     button_wartung.connect_clicked(move |_| {
-        box_test.hide();
+        box_wartung.hide();
     });
 
     // // GUI Update Task idle
@@ -122,8 +122,8 @@ pub fn launch() {
 
     // GUI Update Task Timeout
     gtk::timeout_add(10000, clone!(builder => move || {
-        let box_test: gtk::Box = build!(builder, "box_test");
-        box_test.show();
+        let box_wartung: gtk::Box = build!(builder, "box_wartung");
+        box_wartung.show();
 
         ::glib::Continue(true)
     }));

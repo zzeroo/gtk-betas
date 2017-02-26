@@ -2,7 +2,8 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkBox" id="box_test">
+  <!-- interface-css-provider-path gui.css -->
+  <object class="GtkBox" id="box_wartung">
     <property name="name">box_test</property>
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -12,7 +13,7 @@
         <property name="name">label_wartung_title</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label" translatable="yes">ANLAGEN Wartung</property>
+        <property name="label" translatable="yes">ANLAGEN WARTUNG</property>
       </object>
       <packing>
         <property name="expand">True</property>
