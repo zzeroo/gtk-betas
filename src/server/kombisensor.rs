@@ -14,9 +14,24 @@ impl Kombisensor {
         }
     }
 
+    pub fn update(&mut self) {
+        for mut sensor in self.get_sensors_mut() {
+            sensor.set_adc_value(1);
+        }
+    }
+
     pub fn get_modbus_slave_id(&self) -> u32 {
         self.modbus_slave_id
     }
+
+    pub fn get_sensors(&self) -> &Vec<Sensor> {
+        &self.sensors
+    }
+
+    pub fn get_sensors_mut(&mut self) -> &mut Vec<Sensor> {
+        &mut self.sensors
+    }
+
 
     pub fn set_modbus_slave_id(&mut self, modbus_slave_id: u32) -> Result<()> {
         if modbus_slave_id > 0 && modbus_slave_id < 247 {

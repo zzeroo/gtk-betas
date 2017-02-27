@@ -17,10 +17,9 @@ fn update_tree_store(tree_store: &gtk::TreeStore) {
     if let Some(mut iter) = tree_store.get_iter_first() {
         let mut valid = true;
         while valid {
-            // println!("{:?}", tree_store.get_value(&iter, 0).get::<u32>());
-
+            // Modbus Slave ID aus dem TreeStore auslesen
             if let Some(id) = tree_store.get_value(&iter, 0).get::<u32>() {
-                println!("id: {}", id);
+                // println!("id: {}", id);
             } else {
                 println!("Keine ID gefunden");
             }
