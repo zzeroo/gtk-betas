@@ -3,9 +3,9 @@ name = "gtk-betas"
 version = "0.2.0"
 authors = ["Stefan Müller <s.mueller@it.kls-glt.de>"]
 description = "Tests für die Grafische Oberfläche der 'xMZ-Mod-Touch'-Platform"
-documentation = "https://gaswarnanlagen.com/xmz-mod-touch"
-homepage = "https://gaswarnanlagen.com/xmz-mod-touch"
-repository = "https://github.com/zzeroo/xMZ-Mod-Touch-GUI.git"
+documentation = "https://zzeroo.github.io/gtk-betas/gtk_betas/index.html"
+homepage = "https://zzeroo.github.io/gtk-betas/"
+repository = "https://github.com/zzeroo/gtk-betas.git"
 license = "GPL-2.0"
 
 [[bin]]
