@@ -2,14 +2,9 @@ extern crate gtk_betas;
 extern crate xmz_server;
 
 use gtk_betas::errors::*;
-use std::sync::{Arc, Mutex};
-use std::thread;
-use std::time::Duration;
-use xmz_server::Kombisensor;
 
 
 fn run() -> Result<()> {
-    // gtk_betas::gui::list_box_index::launch();
     gtk_betas::gui::tree_view_index::launch();
 
     Ok(())

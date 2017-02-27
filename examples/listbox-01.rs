@@ -4,7 +4,7 @@ use gtk_betas::errors::*;
 
 
 fn run() -> Result<()> {
-    gtk_betas::gui::index::launch();
+    gtk_betas::gui::list_box_index::launch();
 
     Ok(())
 }

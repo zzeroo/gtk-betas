@@ -26,13 +26,13 @@
         <property name="name">label_wartung_text</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Die Anlage wurde auf Grund eines eingestellen
- Wartungsintervals in den Wartungszustand versetzt.
+        <property name="label" translatable="yes">Die Anlage wurde gemäß DIN EN 50545-1
+in den Wartungsmodus versetzt.
 
 Bitte kontaktieren Sie den Service.
 
-RA-GAS GmbH
-Tel.: 0049 (0) 7151 930440</property>
+Kliemann-Service GmbH
+Tel.: +49 7151 275211</property>
       </object>
       <packing>
         <property name="expand">True</property>
@@ -59,7 +59,7 @@ Tel.: 0049 (0) 7151 930440</property>
   <object class="GtkTreeStore" id="tree_store_kombisensors">
     <columns>
       <!-- column-name modbus_slave_id -->
-      <column type="gchararray"/>
+      <column type="guint"/>
       <!-- column-name type -->
       <column type="gchararray"/>
       <!-- column-name value -->

@@ -13,6 +13,70 @@ use std::time::Duration;
 use xmz_server::Kombisensor;
 
 
+fn update_tree_store(tree_store: &gtk::TreeStore) {
+    if let Some(mut iter) = tree_store.get_iter_first() {
+        let mut valid = true;
+        while valid {
+            // println!("{:?}", tree_store.get_value(&iter, 0).get::<u32>());
+
+            if let Some(id) = tree_store.get_value(&iter, 0).get::<u32>() {
+                println!("id: {}", id);
+            } else {
+                println!("Keine ID gefunden");
+            }
+
+            valid = tree_store.iter_next(&mut iter);
+        }
+    } else {
+        println!("kein iter gefunden");
+    }
+}
+
+// Fill Treestore with data
+fn fill_tree_store(builder: &gtk::Builder) {
+    let tree_store_kombisensors: gtk::TreeStore = build!(builder, "tree_store_kombisensors");
+    for i in 1..10 {
+        let tree_iter = tree_store_kombisensors.insert_with_values(
+            None,
+            None,
+            &[0, 1],
+            &[&i, &format!("Messstelle {}", i)]
+        );
+        // Sensor Messzellen
+        for i in 1..3 {
+            tree_store_kombisensors.insert_with_values(
+                Some(&tree_iter),
+                None,
+                &[1, 2, 3, 4],
+                &[&format!("Messzelle {}", i), &"0.0", &"0.0", &"ppm"]
+            );
+        }
+    }
+
+    // Get the treeview from the builder
+    let tree_view_kombisensors: gtk::TreeView = build!(builder, "tree_view_kombisensors");
+    // Expand all
+    tree_view_kombisensors.expand_all();
+
+    // connect model with view
+    tree_view_kombisensors.set_model(Some(&tree_store_kombisensors));
+}
+
+fn setup_wartung(builder: &gtk::Builder) {
+    // Overlay
+    let button_wartung: gtk::Button = build!(builder, "button_wartung");
+    let box_wartung: gtk::Box = build!(builder, "box_wartung");
+    let overlay_wartung: gtk::Overlay = build!(builder, "overlay_wartung");
+    overlay_wartung.add_overlay(&box_wartung);
+    box_wartung.show();
+
+    button_wartung.connect_clicked(move |_| {
+        box_wartung.hide();
+    });
+}
+
+/// Basic Setup des Hauptfensters
+///
 fn window_main_setup(window: &gtk::Window) -> Result<()> {
     let window_title = format!("{} {}",
                 env!("CARGO_PKG_DESCRIPTION"),
@@ -41,7 +105,8 @@ fn window_main_setup(window: &gtk::Window) -> Result<()> {
     Ok(())
 }
 
-
+/// Einsprung Punkt in das Modul
+///
 pub fn launch() {
     if gtk::init().is_err() {
         println!("Failed to initalize GTK.");
@@ -65,65 +130,25 @@ pub fn launch() {
     let window_main: gtk::Window = build!(builder, "window_main");
     let info_bar: gtk::InfoBar = build!(builder, "info_bar");
     let label_info_bar_msg: gtk::Label = build!(builder, "label_info_bar_msg");
+    let tree_store_kombisensors: gtk::TreeStore = build!(builder, "tree_store_kombisensors");
 
     label_info_bar_msg.set_text("Anwendung erfolgreich gestartet!");
 
     // Basic setup des Haupt Fensters
     window_main_setup(&window_main);
 
-    // Fill Treestore with data
-    let tree_store_kombisensors: gtk::TreeStore = build!(builder, "tree_store_kombisensors");
-    for i in 1..10 {
-        let tree_iter = tree_store_kombisensors.insert_with_values(
-            None,
-            None,
-            &[0, 1],
-            &[&i, &format!("Messstelle {}", i)]
-        );
-        // Sensor Messzellen
-        for i in 1..3 {
-            tree_store_kombisensors.insert_with_values(
-                Some(&tree_iter),
-                None,
-                &[1, 2, 3, 4],
-                &[&format!("Messzelle {}", i), &"0.0", &"0.0", &"ppm"]
-            );
-        }
-    }
-
-    // Get the treeview from the builder
-    let tree_view_kombisensors: gtk::TreeView = build!(builder, "tree_view_kombisensors");
-    // Expand all
-    tree_view_kombisensors.expand_all();
-
-    // connect model with view
-    tree_view_kombisensors.set_model(Some(&tree_store_kombisensors));
+    fill_tree_store(&builder);
 
 
-    // Overlay
-    let scolled_window_kombisensors: gtk::ScrolledWindow = build!(builder, "scolled_window_kombisensors");
-    let overlay_wartung: gtk::Overlay = build!(builder, "overlay_wartung");
-    let button_wartung: gtk::Button = build!(builder, "button_wartung");
-    let box_wartung: gtk::Box = build!(builder, "box_wartung");
-    overlay_wartung.add_overlay(&box_wartung);
+    gtk::timeout_add(100, clone!(tree_store_kombisensors => move || {
+        update_tree_store(&tree_store_kombisensors);
 
-    button_wartung.connect_clicked(move |_| {
-        box_wartung.hide();
-    });
+        ::glib::Continue(true)
+    }));
 
-    // // GUI Update Task idle
-    // gtk::idle_add(clone!(builder => move || {
-    //     println!("Ping");
-    //
-    //     thread::sleep(Duration::from_millis(100));
-    //
-    //     ::glib::Continue(true)
-    // }));
-
-    // GUI Update Task Timeout
-    gtk::timeout_add(10000, clone!(builder => move || {
-        let box_wartung: gtk::Box = build!(builder, "box_wartung");
-        box_wartung.show();
+    // Wartungsmeldung
+    gtk::timeout_add(1000, clone!(builder => move || {
+        // setup_wartung(&builder);
 
         ::glib::Continue(true)
     }));
